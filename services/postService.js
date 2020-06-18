@@ -11,7 +11,16 @@ class PostService extends PostDao {
     this.options = options
   }
 
-  async createPostService (context) {
+  async getAllPostsService () {
+    try {
+      const newPost = await this.getAllPosts()
+      return newPost
+    } catch (err) {
+      throw err
+    }
+  }
+
+  async createPostService(context) {
     try {
       const newPost = await this.createPost(context)
       return newPost

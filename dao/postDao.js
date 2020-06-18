@@ -1,12 +1,26 @@
 const { Post } = require('../models')
 
-
 class PostDao {
   constructor (options = {}) {
     this.options = options
     this.post = Post
   }
 
+  /*
+   */
+  async getAllPosts () {
+    try {
+      const allPosts = await this.post.find({}).sort({ createdAt: -1 })
+      return allPosts
+    } catch (error) {
+      throw err
+    }
+  }
+
+  /*
+      method to create new post
+      context = req.body, to be inserted on the post '/blog/newpost' route path
+  */
   async createPost (context) {
     try {
       const newPost = await this.post.create(context)
@@ -32,8 +46,5 @@ class PostDao {
     }
   }
 }
-
-
-
 
 module.exports = PostDao

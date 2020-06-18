@@ -12,7 +12,8 @@ class PostRoute {
 
   async getPosts (req, res) {
     try {
-      res.status(200).json('Hello I am here')
+      const allPosts = await this.postService.getAllPostsService()
+      res.status(200).json(allPosts)
     } catch (err) {
       res.status(404).json(err)
       throw err
