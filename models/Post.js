@@ -43,4 +43,5 @@ postSchema.methods.getCharCount = function () {
   this.charCount = contentArray.length
   return this
 }
+
 module.exports = mongoose.model('Post', postSchema)
