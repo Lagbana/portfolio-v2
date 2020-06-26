@@ -1,0 +1,17 @@
+.img-block {
+  width: 10rem;
+  height: 10rem;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+img {
+  border-radius: 50%;
+  height: 100%;
+  width: auto;
+}

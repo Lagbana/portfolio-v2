@@ -1,21 +1,27 @@
 import React from 'react'
 import 'antd/dist/antd.css'
 import './style.css'
-import { Layout, Menu } from 'antd'
+import { Layout, Menu, Switch,  } from 'antd'
 import {
+  FilePdfOutlined,
   UploadOutlined,
   UserOutlined,
   VideoCameraOutlined
 } from '@ant-design/icons'
+import ButtonComponent from '../../components/Button'
+import ImageCard from '../../components/ImageCard'
+import imageSrc from '../../resources/larry.png'
 
 const { Content, Sider } = Layout
 // const { Header, Content, Footer, Sider } = Layout
 
 function MainLayout () {
   return (
-    <Layout>
+    <Layout >
       <Sider
         breakpoint='md'
+        theme='light'
+        // width= '15vw'
         collapsedWidth='0'
         onBreakpoint={broken => {
           console.log(broken)
@@ -27,52 +33,49 @@ function MainLayout () {
           // overflow: 'auto',
           height: '100vh',
           position: 'fixed',
-          left: 0
+          left: 0,
+          textAlign: 'center'
         }}
       >
-        <div className='logo' />
-
-        <Menu theme='dark' mode='inline' defaultSelectedKeys={['4']}>
-          <Menu.Item key='1' icon={<UserOutlined />}>
+        <ImageCard src={imageSrc} alt='Larry Agbana Profile Image'/>
+        <Menu theme='dark' mode='inline' defaultSelectedKeys={['7']} >
+          <Menu.Item key='1' icon={<UserOutlined />} >
             Home
           </Menu.Item>
-          <Menu.Item key='2' icon={<VideoCameraOutlined />}>
+          <Menu.Item key='2' icon={<VideoCameraOutlined />} >
             About
           </Menu.Item>
-          <Menu.Item key='3' icon={<UploadOutlined />}>
+          <Menu.Item key='3' icon={<UploadOutlined />} >
             Experience
           </Menu.Item>
-          <Menu.Item key='4' icon={<UserOutlined />}>
+          <Menu.Item key='4' icon={<UserOutlined />} >
             Education
           </Menu.Item>
-          <Menu.Item key='5' icon={<UserOutlined />}>
+          <Menu.Item key='5' icon={<UserOutlined />} >
             Projects
           </Menu.Item>
-          <Menu.Item key='6' icon={<UserOutlined />}>
+          <Menu.Item key='6' icon={<UserOutlined />} >
             Blog
           </Menu.Item>
-          <Menu.Item key='7' icon={<UserOutlined />}>
+          <Menu.Item key='7' icon={<UserOutlined />} >
             Contact
           </Menu.Item>
         </Menu>
-        <div className='logo' style={{ marginTop: '3rem' }} />
+        <ButtonComponent name='Resume' size='large' ml='auto' mr='auto' mt='4rem' px='2rem' icon={<FilePdfOutlined />} />
       </Sider>
-      <Layout className="site-layout" style={{ marginLeft: 200 }}>
-        <Content style={{ overflow: 'initial' }}>
+      <Layout className='site-layout' >
+        <Content >
           <div
-            className='site-layout-background'
+            className='site-layout-background mainview'
             style={{
-              padding: 24,
-              minHeight: '100vh',
               backgroundColor: 'purple',
               color: 'white',
-              // textAlign: 'center'
             }}
           >
             <p>Home Content</p>
           </div>
         </Content>
-        <Content>
+        <Content className='mainview'>
           <div
             className='site-layout-background'
             style={{
@@ -85,7 +88,7 @@ function MainLayout () {
             About Content
           </div>
         </Content>
-        <Content>
+        <Content className='mainview'>
           <div
             className='site-layout-background'
             style={{
@@ -98,7 +101,7 @@ function MainLayout () {
             Experience Content
           </div>
         </Content>
-        <Content>
+        <Content className='mainview'>
           <div
             className='site-layout-background'
             style={{
@@ -111,7 +114,7 @@ function MainLayout () {
             Education Content
           </div>
         </Content>
-        <Content>
+        <Content className='mainview'>
           <div
             className='site-layout-background'
             style={{
@@ -124,7 +127,7 @@ function MainLayout () {
             Projects Content
           </div>
         </Content>
-        <Content>
+        <Content className='mainview'>
           <div
             className='site-layout-background'
             style={{
@@ -137,7 +140,7 @@ function MainLayout () {
             Blog Content
           </div>
         </Content>
-        <Content>
+        <Content className='mainview'>
           <div
             className='site-layout-background'
             style={{

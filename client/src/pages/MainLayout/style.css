@@ -14,3 +14,11 @@
 [data-theme='dark'] .site-layout-sub-header-background {
   background: #141414;
 }
+
+.mainview {
+  padding-left: 15vw;
+  padding-top: 2vw;
+  padding-right: 2vw;
+  padding-bottom: 2vw;
+  min-height: 100vh;
+}

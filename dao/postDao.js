@@ -33,10 +33,10 @@ class PostDao {
         method to update post by it's id
         context = req.body, to be inserted in the put '/:id' route handler
     */
-  async updatePost (context) {
+  async updatePost (contextID, context) {
     try {
-      const updatedPost = await this.post.findOneAndUpdate(
-        { _id: require.param.id },
+      const updatedPost = await this.post.findByIdAndUpdate(
+        { _id: contextID },
         { $set: { context } },
         { new: true }
       )

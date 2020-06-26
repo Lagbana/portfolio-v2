@@ -28,6 +28,15 @@ class PostService extends PostDao {
       throw err
     }
   }
+
+  async updatePostService(contextID, context) {
+    try {
+      const updatedPost = await this.updatePost(contextID, context)
+      return updatedPost
+    } catch (err) {
+      throw err
+    }
+  }
 }
 
 module.exports = PostService
