@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.440c14f9.chunk.css",
+    "main.js": "/static/js/main.755a38d4.chunk.js",
+    "main.js.map": "/static/js/main.755a38d4.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.09b85ec0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.09b85ec0.js.map",
+    "static/css/2.3cb76441.chunk.css": "/static/css/2.3cb76441.chunk.css",
+    "static/js/2.a5205a79.chunk.js": "/static/js/2.a5205a79.chunk.js",
+    "static/js/2.a5205a79.chunk.js.map": "/static/js/2.a5205a79.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.5ba7599e9b2a3ff266884f34f4aedde1.js": "/precache-manifest.5ba7599e9b2a3ff266884f34f4aedde1.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.3cb76441.chunk.css.map": "/static/css/2.3cb76441.chunk.css.map",
+    "static/css/main.440c14f9.chunk.css.map": "/static/css/main.440c14f9.chunk.css.map",
+    "static/js/2.a5205a79.chunk.js.LICENSE.txt": "/static/js/2.a5205a79.chunk.js.LICENSE.txt",
+    "static/media/LarryAgbana.pdf": "/static/media/LarryAgbana.89d6e40d.pdf",
+    "static/media/larry.png": "/static/media/larry.b72b9d25.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.09b85ec0.js",
+    "static/css/2.3cb76441.chunk.css",
+    "static/js/2.a5205a79.chunk.js",
+    "static/css/main.440c14f9.chunk.css",
+    "static/js/main.755a38d4.chunk.js"
+  ]
+}
