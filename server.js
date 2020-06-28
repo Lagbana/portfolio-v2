@@ -41,13 +41,13 @@ initializeRoutes(app)
 
 // Handling and rendering of static files
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'client/build')))
+  app.use(express.static('client/build'))
 }
 
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get('*', (_, res) => {
-  res.sendFile(path.join(__dirname + '/client/build/index.html'))
+  res.sendFile(path.join(__dirname + './client/build/index.html'))
 })
 
 /*
