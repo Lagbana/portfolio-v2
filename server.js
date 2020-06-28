@@ -15,8 +15,20 @@ const mongoose = require('mongoose')
 // const initializeRoutes = require('./routes')
 const compression = require('compression')
 
-// Initialize the express app and set up middlewares
+// Initialize the express app
 const app = express()
+
+// Re-direct all unsecure traffic through the https protocol 
+function requireHTTPS (req, res, next) {
+  // The 'x-forwarded-proto' check is for Heroku
+  if (!req.secure && req.get('x-forwarded-proto') !== 'https' && process.env.NODE_ENV !== 'development') {
+    return res.redirect('https://' + req.get('host') + req.url)
+  }
+  next()
+}
+
+// Set up all middleware
+app.use(requireHTTPS)
 // app.use(cors())
 app.use(logger('dev'))
 app.use(compression())
@@ -36,7 +48,6 @@ app.use(
 app.use(bodyParser.json())
 
 // initializeRoutes(app)
-
 
 // Handling and rendering of static files
 if (process.env.NODE_ENV === 'production') {
