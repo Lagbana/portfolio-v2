@@ -1,16 +1,43 @@
-import React from 'react';
-// import logo from './logo.svg';
-// import './App.css';
-// import SideBar from './components/SideBar'
-import MainLayout from './pages/MainLayout'
+// import react and reatc-router-dom methods
+import React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
 
-function App() {
+// import styling elements and Layout component
+import 'antd/dist/antd.css'
+import './App.css'
+import { Layout } from 'antd'
+
+// import SideBar component and all sections
+import SideBar from '../src/components/SideBar'
+import {
+  AboutSection,
+  BlogSection,
+  ContactSection,
+  EducationSection,
+  ExperienceSection,
+  ProjectsSection
+} from '../src/sections/index'
+
+// Destructure Layout to access the Sider component
+const { Content } = Layout
+
+// App function that returns the page of all JSX components
+function App () {
   return (
-    <>
-      {/* <NavBar /> */}
-    <MainLayout /> 
-    </>
-  );
+    <Layout>
+      <Router>
+        <SideBar />
+      </Router>
+      <Content>
+        <AboutSection id='/about' />
+        <ExperienceSection id='/experience' />
+        <EducationSection id='/education' />
+        <ProjectsSection id='/projects' />
+        <BlogSection id='/blog' />
+        <ContactSection id='/contact' />
+      </Content>
+    </Layout>
+  )
 }
 
-export default App;
+export default App
