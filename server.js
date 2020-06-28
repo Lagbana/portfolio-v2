@@ -8,16 +8,16 @@ Import Dependencies
 require('dotenv').config()
 const express = require('express')
 const logger = require('morgan')
-const cors = require('cors')
+// const cors = require('cors')
 const bodyParser = require('body-parser')
 const path = require('path')
 const mongoose = require('mongoose')
-const initializeRoutes = require('./routes')
+// const initializeRoutes = require('./routes')
 const compression = require('compression')
 
 // Initialize the express app and set up middlewares
 const app = express()
-app.use(cors())
+// app.use(cors())
 app.use(logger('dev'))
 app.use(compression())
 
@@ -30,13 +30,12 @@ mongoose.connect(process.env.MONGO_URI, {
 
 app.use(
   bodyParser.urlencoded({
-    limit: '50mb',
     extended: true
   })
 )
 app.use(bodyParser.json())
 
-initializeRoutes(app)
+// initializeRoutes(app)
 
 
 // Handling and rendering of static files
@@ -46,7 +45,7 @@ if (process.env.NODE_ENV === 'production') {
 
 // Send every other request to the React app
 // Define any API routes before this runs
-app.get('*', (_, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + './client/build/index.html'))
 })
 
