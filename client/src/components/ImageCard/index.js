@@ -1,7 +1,7 @@
 // Import react
 import React from 'react'
 // Import styling
-import './ImageCard.module.css'
+import './style.css'
 
 export default function ImageCard (props) {
   const { src, alt, onClick } = props

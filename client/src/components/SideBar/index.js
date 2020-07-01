@@ -3,10 +3,10 @@ import React, { useState } from 'react'
 import { BrowserRouter as Router, Link as ResumeLink } from 'react-router-dom'
 import { Link, animateScroll as scroll } from 'react-scroll'
 
-// Import ant design components and styling
-import 'antd/dist/antd.css'
-import { FilePdfOutlined } from '@ant-design/icons'
+// Import ant design components and font-awesome styling
 import { Layout, Menu } from 'antd'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFilePdf } from '@fortawesome/free-solid-svg-icons'
 
 // Import components
 import ButtonComponent from '../../components/Button'
@@ -19,8 +19,7 @@ import resume from '../../resources/LarryAgbana.pdf'
 // Destructure Layout to access the Sider component
 const { Sider } = Layout
 
-export function SideBar() {
-  
+export function SideBar () {
   // Function to scroll to the top of the page when called
   // calling react-scroll method
   const scrollToTop = () => {
@@ -144,7 +143,7 @@ export function SideBar() {
             mr='auto'
             mt='4rem'
             px='2rem'
-            icon={<FilePdfOutlined />}
+            icon={<FontAwesomeIcon icon={faFilePdf} />}
           />
         </ResumeLink>
       </Router>

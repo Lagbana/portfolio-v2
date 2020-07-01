@@ -5,14 +5,11 @@ import { Button } from 'antd'
 // Button component
 // Takes props used for styling and naming
 function ButtonComponent (props) {
-  const { icon, size, name, color, ml, mr, mt, px } = props
+  const { icon, size, name, color, backgroundColor, ml, mr, mt, px } = props
   return (
     <Button
-      type='primary'
       shape='round'
-      icon={icon}
       size={size}
-      color={color}
       style={{
         textAlign: 'center',
         marginTop: mt,
@@ -20,10 +17,12 @@ function ButtonComponent (props) {
         paddingRight: px,
         marginLeft: ml,
         marginRight: mr,
-        display: 'block'
+        display: 'block',
+        color: color,
+        backgroundColor: backgroundColor
       }}
     >
-      {name}
+      {icon} &nbsp; <span>{name}</span>
     </Button>
   )
 }

@@ -29,6 +29,7 @@ function App () {
         <SideBar />
       </Router>
       <Content>
+        {/* <AboutSection id='/about' color='blue' headerColor='orange' backgroundColor='white'/> */}
         <AboutSection id='/about' />
         <ExperienceSection id='/experience' />
         <EducationSection id='/education' />
