@@ -1,10 +1,11 @@
 // Install react, react-dom, and react-scroll methods
+import { useSectionContext } from '../../utils/GlobalState'
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Link as ResumeLink } from 'react-router-dom'
 import { Link, animateScroll as scroll } from 'react-scroll'
 
 // Import ant design components and font-awesome styling
-import { Layout, Menu } from 'antd'
+import { Layout, Menu, Switch } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFilePdf } from '@fortawesome/free-solid-svg-icons'
 
@@ -19,7 +20,9 @@ import resume from '../../resources/LarryAgbana.pdf'
 // Destructure Layout to access the Sider component
 const { Sider } = Layout
 
-export function SideBar () {
+function SideBar () {
+  let [state, dispatch] = useSectionContext()
+
   // Function to scroll to the top of the page when called
   // calling react-scroll method
   const scrollToTop = () => {
@@ -28,23 +31,38 @@ export function SideBar () {
 
   // Set state to updated the sidebar menu key
   const [selected, setSelected] = useState('1')
+  const [isChecked, setIsChecked] = useState(true)
+
+
+  async function handleToggle (event) {
+    setIsChecked(event)
+    isChecked === false ? await dispatch({ type: 'light' }) : await dispatch({ type: 'dark' })
+  }
+
+
+  const bkColor = state[state.length - 1].backgroundColor
+  const textColor = state[state.length - 1 ].color
+  const buttonColor = state[state.length - 1].buttonColor
+ 
 
   return (
     <Sider
       breakpoint='md'
-      theme='light'
       collapsedWidth='0'
-      // onBreakpoint={broken => {
-      //   console.log(broken)
-      // }}
-      // onCollapse={(collapsed, type) => {
-      //   console.log(collapsed, type)
-      // }}
       style={{
         height: '100vh',
         position: 'fixed',
+        zIndex: 99,
+        flex: '0 0 200px',
+        maxWidth: '200px',
+        minWidth: '200px',
+        width: '200px',
         left: 0,
-        textAlign: 'center'
+        textAlign: 'center',
+        fontDisplay: 'swap',
+        backgroundColor: bkColor, 
+        color: textColor
+
       }}
     >
       <ImageCard
@@ -52,8 +70,17 @@ export function SideBar () {
         alt='Larry Agbana Profile Image'
         onClick={scrollToTop}
       />
+      <div style={{marginBottom: '1vw'}}>
+        <Switch
+          checkedChildren='light'
+          unCheckedChildren='dark'
+          defaultChecked
+          size='default'
+          onClick={handleToggle}
+        />
+      </div >
       <Router>
-        <Menu theme='dark' mode='inline' selectedKeys={[selected]}>
+        <Menu style={{backgroundColor: bkColor}} mode='inline' selectedKeys={[selected]}>
           <Menu.Item key='1'>
             <Link
               activeClass='active'
@@ -63,11 +90,12 @@ export function SideBar () {
               offset={-70}
               duration={500}
               onClick={() => setSelected('1')}
+              style={{color: textColor}}
             >
               About
             </Link>
           </Menu.Item>
-          <Menu.Item key='2'>
+          <Menu.Item key='2' >
             <Link
               activeClass='active'
               to='/experience'
@@ -76,11 +104,12 @@ export function SideBar () {
               offset={-70}
               duration={500}
               onClick={() => setSelected('2')}
+              style={{color: textColor}}
             >
               Experience
             </Link>
           </Menu.Item>
-          <Menu.Item key='3'>
+          <Menu.Item key='3' >
             <Link
               activeClass='active'
               to='/education'
@@ -89,11 +118,12 @@ export function SideBar () {
               offset={-70}
               duration={500}
               onClick={() => setSelected('3')}
+              style={{color: textColor}}
             >
               Education
             </Link>
           </Menu.Item>
-          <Menu.Item key='4'>
+          <Menu.Item key='4' >
             <Link
               activeClass='active'
               to='/projects'
@@ -102,11 +132,12 @@ export function SideBar () {
               offset={-70}
               duration={500}
               onClick={() => setSelected('4')}
+              style={{color: textColor}}
             >
-              Projects
+              Projects & Skills
             </Link>
           </Menu.Item>
-          <Menu.Item key='5'>
+          <Menu.Item key='5' >
             <Link
               activeClass='active'
               to='/blog'
@@ -115,11 +146,12 @@ export function SideBar () {
               offset={-70}
               duration={500}
               onClick={() => setSelected('5')}
+              style={{color: textColor}}
             >
               Blog
             </Link>
           </Menu.Item>
-          <Menu.Item key='6'>
+          <Menu.Item key='6' >
             <Link
               activeClass='active'
               to='/contact'
@@ -128,6 +160,7 @@ export function SideBar () {
               offset={-70}
               duration={500}
               onClick={() => setSelected('6')}
+              style={{color: textColor}}
             >
               Contact
             </Link>
@@ -141,8 +174,10 @@ export function SideBar () {
             size='large'
             ml='auto'
             mr='auto'
-            mt='4rem'
+            mt='3vw'
             px='2rem'
+            color={textColor}
+            backgroundColor={buttonColor}
             icon={<FontAwesomeIcon icon={faFilePdf} />}
           />
         </ResumeLink>

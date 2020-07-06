@@ -1,0 +1,41 @@
+.projectsContainer {
+  padding-left: 4.5vw;
+  padding-right: 0.5vw;
+}
+
+/* section {
+  padding: '2vw 2vw 2vw 15vw' !important;
+} */
+
+
+@media screen and (max-width: 700px) {
+  section {
+      padding: '2vw 2vw 2vw 2vw' !important;
+  }
+
+  .projectsContainer {
+    padding-left: 0vw;
+    padding-right: 0vw;
+  }
+  /* .iconsDiv {
+    width: 100vw;
+  }
+
+  .icon {
+    font-size: 1.8rem;
+  } */
+
+  /* 
+  .aboutContainer h1 {
+    font-size: 3em;
+  }
+  .aboutContainer h3 {
+    font-size: 2em;
+  }
+  .aboutContainer h5 {
+    font-size: 1.25em;
+  }
+  .aboutContainer p {
+    font-size: 1em;
+  } */
+}

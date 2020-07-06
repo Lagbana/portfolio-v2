@@ -23,6 +23,7 @@ class PostService extends PostDao {
   async createPostService(context) {
     try {
       const newPost = await this.createPost(context)
+        
       return newPost
     } catch (err) {
       throw err

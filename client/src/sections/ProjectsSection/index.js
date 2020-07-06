@@ -1,26 +1,91 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { List, Card } from 'antd'
+import './style.css'
 
 export function ProjectsSection (props) {
-  const {id} = props
+  const { id, color, headerColor, backgroundColor } = props
+
+  const [width, setWidth] = useState(window.innerWidth)
+  const breakpoint = 700
+
+  useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth)
+    window.addEventListener('resize', handleWindowResize)
+
+    // Clean up: remove event listener
+    return () => window.removeEventListener('resize', handleWindowResize)
+  }, [])
+
+  const sectionPadding =
+    width > breakpoint ? '2vw 2vw 2vw 15vw' : '2vw 2vw 2vw 2vw'
+
+  const projectStyle = {
+    backgroundColor: backgroundColor,
+    color: color,
+    padding: sectionPadding,
+    minHeight: '100vh'
+  }
+
+  const listData = []
+  for (let i = 0; i < 18; i++) {
+    listData.push({
+      href: 'http://ant.design',
+      title: `ant design part ${i}`,
+      avatar:
+        'https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png',
+      description:
+        'Ant Design, a design language for background applications, is refined by Ant UED Team.',
+      content:
+        'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.'
+    })
+  }
+
   return (
-    <section
-      className='site-layout-background mainview'
-      id={id}
-      style={{
-        backgroundColor: 'yellow',
-        color: 'white',
-        padding: '2vw 2vw 2vw 15vw',
-        minHeight: '100vh'
-      }}
-    >
-      <p>
-        With Reach Router, any component that's a direct child of the router
-        receives a location prop that describes the user's current location
-        within the app. In my case, the header navigation is a child of a page
-        layout component. Rather than passing location through as a prop, I've
-        used the Location component. This provides a child render prop that has
-        access to the user's location.
-      </p>
+    <section id={id} style={projectStyle}>
+      <div className='projectsContainer'>
+        <h1 style={{ color: headerColor }}> Projects</h1>
+
+        <List
+          // itemLayout='vertical'
+          size='small'
+          grid={{
+            gutter: 16,
+            xs: 1,
+            sm: 2,
+            md: 3,
+            lg: 3,
+            xl: 3,
+            xxl: 3
+          }}
+          pagination={{
+            showSizeChanger: true,
+            pageSize: 6,
+            pageSizeOptions: ['3', '6', '9']
+            // position: 'both'
+          }}
+          dataSource={listData}
+          renderItem={item => (
+            <List.Item>
+              <Card
+                bordered={false}
+                key={item.title}
+                title={item.title}
+                cover={
+                  <img
+                    alt={item.description}
+                    src={
+                      'https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png'
+                    }
+                  />
+                }
+                // cover={<img alt={'ALT'} src={url} />}
+              >
+                {item.content}
+              </Card>
+            </List.Item>
+          )}
+        />
+      </div>
     </section>
   )
 }

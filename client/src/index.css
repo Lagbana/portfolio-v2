@@ -3,12 +3,13 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-display: swap;
 }
 
-.heading {
+/* .heading {
   font-weight: 400;
-}
+} */
 
-.subheading {
+/* .subheading {
   font-weight: 200;
-}
+} */

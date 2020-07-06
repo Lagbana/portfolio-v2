@@ -1,20 +1,22 @@
 import React from 'react'
+// import { useSectionContext } from '../../utils/GlobalState'
 import './style.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
-import { Space } from 'antd'
+import { Space, Layout } from 'antd'
 
 import Button from '../../components/Button'
+const { Content } = Layout
+
 
 export function AboutSection (props) {
   const { id, color, headerColor, backgroundColor } = props
 
   return (
     <section
-      // className='site-layout-background'
       id={id}
       style={{
         color: color,
@@ -23,72 +25,67 @@ export function AboutSection (props) {
         minHeight: '100vh'
       }}
     >
-      <div className='aboutContainer'>
-        <h1 style={{ color: headerColor }}>Larry Agbana</h1>
-        <h3 style={{ color: headerColor }}>Full Stack Web Developer</h3>
-        <h5 style={{ color: headerColor }}>
-          Ottawa, ON &middot; (416) 274-9499 &middot; larryagbana@gmail.com
-        </h5>
+      <Content>
+        <div className='aboutContainer'>
+          <h1 style={{ color: headerColor }}>Larry Agbana</h1>
+          <h3 style={{ color: headerColor }}>Full Stack Web Developer</h3>
+          <h5 style={{ color: headerColor }}>
+            Ottawa, ON &middot; (416) 274-9499 &middot; larryagbana@gmail.com
+          </h5>
 
-        <p>
-          A full stack web developer that strives to balance technical
-          excellence with flawless user experience in order to create products
-          people love and use. I believe in writing clean modular code and
-          embrace test driven and agile development with the aim to collaborate
-          with others effectively and build reliable, scalable, and maintainable
-          applications.
-          <br />
-          <br />
-          When I am not working or learning something new you might find me
-          running down a soccer pitch in Ottawa or doing some amateur farming
-          (ask me about my kale &#x1F609;). <br /> <br />
-          Explore my projects and feel free to reach out for collaboration or
-          recruiting. Thanks for visiting!
-        </p>
+          <p>
+            A full stack web developer that strives to balance technical
+            excellence with flawless user experience in order to create products
+            people love and use. I believe in writing clean modular code and
+            embrace test driven and agile development with the aim to
+            collaborate with others effectively and build reliable, scalable,
+            and maintainable applications.
+            <br />
+            <br />
+            When I am not working or learning something new you might find me
+            running down a soccer pitch somewhere in Ottawa or doing some
+            amateur farming (ask me about my kale &#x1F609;). <br /> <br />
+            Explore my projects and feel free to reach out for collaboration or
+            recruiting. Thanks for visiting!
+          </p>
 
-        <div className='iconsDiv'>
-          <Space direction='vertical' align='center'>
-            <Space size={40} align='start'>
-              <a
-                href='https://github.com/Lagbana'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <FontAwesomeIcon icon={faGithub} className='icon' />
-              </a>
-              <a
-                href='https://www.linkedin.com/in/larryagbana/'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <FontAwesomeIcon icon={faLinkedin} className='icon' />
-              </a>
-              <a
-                href='https://calendar.google.com/calendar?cid=bGFycnlhZ2JhbmFAZ21haWwuY29t'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <FontAwesomeIcon icon={faCalendarAlt} className='icon' />
-              </a>
-              <a
-                href='mailto:larryagbana@gmail.com'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <FontAwesomeIcon icon={faEnvelope} className='icon' />
-              </a>
-            </Space>
-            <div>
+          <div className='iconsDiv'>
+            <Space direction='vertical' align='center'>
+              <Space size={40} align='start'>
+                <a
+                  href='https://github.com/Lagbana'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <FontAwesomeIcon icon={faGithub} className='icon' />
+                </a>
+                <a
+                  href='https://www.linkedin.com/in/larryagbana/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <FontAwesomeIcon icon={faLinkedin} className='icon' />
+                </a>
+                <a
+                  href='https://calendar.google.com/calendar?cid=bGFycnlhZ2JhbmFAZ21haWwuY29t'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <FontAwesomeIcon icon={faCalendarAlt} className='icon' />
+                </a>
+                <a
+                  href='mailto:larryagbana@gmail.com'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <FontAwesomeIcon icon={faEnvelope} className='icon' />
+                </a>
+              </Space>
+              {/* <> */}
               <a
                 href='https://www.larryagbana.com'
                 target='_blank'
                 rel='noopener noreferrer'
-                onClick={() => {
-                  window.open(
-                    'https://zoom.us/j/4731778118?pwd=dVJYSGRaVjl1WHVPeUdjMW1OZE0zdz09',
-                    '_blank'
-                  )
-                }}
               >
                 <Button
                   name='Zoom me!'
@@ -99,14 +96,23 @@ export function AboutSection (props) {
                   px='1.5rem'
                   color={color}
                   backgroundColor={headerColor}
+                  handleClick={() => {
+                    window.open(
+                      'https://zoom.us/j/4731778118?pwd=dVJYSGRaVjl1WHVPeUdjMW1OZE0zdz09',
+                      '_blank',
+                      'noopener',
+                      'noreferrer'
+                    )
+                  }}
                 >
                   Zoom me!
                 </Button>
               </a>
-            </div>
-          </Space>
+              {/* </> */}
+            </Space>
+          </div>
         </div>
-      </div>
+      </Content>
     </section>
   )
 }
