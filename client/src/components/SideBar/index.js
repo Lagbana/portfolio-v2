@@ -139,7 +139,7 @@ function SideBar () {
               Projects & Skills
             </Link>
           </Menu.Item>
-          <Menu.Item key='5' >
+          {/* <Menu.Item key='5' >
             <Link
               activeClass='active'
               to='/blog'
@@ -152,7 +152,7 @@ function SideBar () {
             >
               Blog
             </Link>
-          </Menu.Item>
+          </Menu.Item> */}
           <Menu.Item key='6' >
             <Link
               activeClass='active'

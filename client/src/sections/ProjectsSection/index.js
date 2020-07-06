@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react'
+import { useSectionContext } from '../../utils/GlobalState'
 import { List, Card } from 'antd'
 import './style.css'
 
 export function ProjectsSection (props) {
-  const { id, color, headerColor, backgroundColor } = props
+  const { id } = props
+
+  let [state, dispatch] = useSectionContext()
+  const bkColor = state[state.length - 1].backgroundColor
+  const textColor = state[state.length - 1].color
+  const headerColor = state[state.length - 1].headerColor
 
   const [width, setWidth] = useState(window.innerWidth)
   const breakpoint = 700
@@ -20,12 +26,20 @@ export function ProjectsSection (props) {
     width > breakpoint ? '2vw 2vw 2vw 15vw' : '2vw 2vw 2vw 2vw'
 
   const projectStyle = {
-    backgroundColor: backgroundColor,
-    color: color,
+    backgroundColor: bkColor,
+    color: textColor,
     padding: sectionPadding,
     minHeight: '100vh'
   }
 
+  const titleUnderline = {
+    border: '0rem',
+    height: '0.2rem',
+    width: '5rem',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    backgroundColor: headerColor
+  }
   const listData = []
   for (let i = 0; i < 18; i++) {
     listData.push({
@@ -43,7 +57,24 @@ export function ProjectsSection (props) {
   return (
     <section id={id} style={projectStyle}>
       <div className='projectsContainer'>
-        <h1 style={{ color: headerColor }}> Projects</h1>
+        <div
+          style={{
+            marginBottom: '2rem',
+            marginLeft: 'auto',
+            marginRight: 'auto'
+          }}
+        >
+          <h1
+            style={{
+              color: headerColor,
+              textAlign: 'center',
+              fontSize: '3em'
+            }}
+          >
+            PROJECTS
+          </h1>
+          <hr style={titleUnderline} />
+        </div>
 
         <List
           // itemLayout='vertical'
@@ -67,6 +98,7 @@ export function ProjectsSection (props) {
           renderItem={item => (
             <List.Item>
               <Card
+                // style={{ display: "none" }}
                 bordered={false}
                 key={item.title}
                 title={item.title}
