@@ -36,13 +36,15 @@ function SideBar () {
 
   async function handleToggle (event) {
     setIsChecked(event)
-    isChecked === false ? await dispatch({ type: 'light' }) : await dispatch({ type: 'dark' })
+    isChecked === false ? await dispatch({ type: 'dark' }) : await dispatch({ type: 'light' })
   }
 
 
   const bkColor = state[state.length - 1].backgroundColor
-  const textColor = state[state.length - 1 ].color
+  // const textColor = state[state.length - 1 ].color
   const buttonColor = state[state.length - 1].buttonColor
+  const menuColor = state[state.length - 1].menuColor
+
  
 
   return (
@@ -61,7 +63,7 @@ function SideBar () {
         textAlign: 'center',
         fontDisplay: 'swap',
         backgroundColor: bkColor, 
-        color: textColor
+        // color: textColor
 
       }}
     >
@@ -72,8 +74,8 @@ function SideBar () {
       />
       <div style={{marginBottom: '1vw'}}>
         <Switch
-          checkedChildren='light'
-          unCheckedChildren='dark'
+          checkedChildren='dark'
+          unCheckedChildren='light'
           defaultChecked
           size='default'
           onClick={handleToggle}
@@ -90,7 +92,7 @@ function SideBar () {
               offset={-70}
               duration={500}
               onClick={() => setSelected('1')}
-              style={{color: textColor}}
+              style={{color: menuColor, fontWeight: 600, fontSize: '1rem'}}
             >
               About
             </Link>
@@ -104,7 +106,7 @@ function SideBar () {
               offset={-70}
               duration={500}
               onClick={() => setSelected('2')}
-              style={{color: textColor}}
+              style={{color: menuColor, fontWeight: 600, fontSize: '1rem'}}
             >
               Experience
             </Link>
@@ -118,7 +120,7 @@ function SideBar () {
               offset={-70}
               duration={500}
               onClick={() => setSelected('3')}
-              style={{color: textColor}}
+              style={{color: menuColor, fontWeight: 600, fontSize: '1rem'}}
             >
               Education
             </Link>
@@ -132,7 +134,7 @@ function SideBar () {
               offset={-70}
               duration={500}
               onClick={() => setSelected('4')}
-              style={{color: textColor}}
+              style={{color: menuColor, fontWeight: 600, fontSize: '1rem'}}
             >
               Projects & Skills
             </Link>
@@ -146,7 +148,7 @@ function SideBar () {
               offset={-70}
               duration={500}
               onClick={() => setSelected('5')}
-              style={{color: textColor}}
+              style={{color: menuColor, fontWeight: 600, fontSize: '1rem'}}
             >
               Blog
             </Link>
@@ -160,7 +162,7 @@ function SideBar () {
               offset={-70}
               duration={500}
               onClick={() => setSelected('6')}
-              style={{color: textColor}}
+              style={{color: menuColor, fontWeight: 600, fontSize: '1rem'}}
             >
               Contact
             </Link>
@@ -176,7 +178,6 @@ function SideBar () {
             mr='auto'
             mt='3vw'
             px='2rem'
-            color={textColor}
             backgroundColor={buttonColor}
             icon={<FontAwesomeIcon icon={faFilePdf} />}
           />

@@ -1,5 +1,5 @@
 import React from 'react'
-// import { useSectionContext } from '../../utils/GlobalState'
+import { useSectionContext } from '../../utils/GlobalState'
 import './style.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -11,16 +11,21 @@ import { Space, Layout } from 'antd'
 import Button from '../../components/Button'
 const { Content } = Layout
 
-
 export function AboutSection (props) {
-  const { id, color, headerColor, backgroundColor } = props
+  const { id } = props
+  let [state, dispatch] = useSectionContext()
+  const bkColor = state[state.length - 1].backgroundColor
+  const textColor = state[state.length - 1].color
+  const buttonColor = state[state.length - 1].buttonColor
+  const headerColor = state[state.length - 1].headerColor
+  const iconColor = state[state.length - 1].iconColor
 
   return (
     <section
       id={id}
       style={{
-        color: color,
-        backgroundColor: backgroundColor,
+        color: textColor,
+        backgroundColor: bkColor,
         padding: '2vw 2vw 2vw 15vw',
         minHeight: '100vh'
       }}
@@ -37,9 +42,9 @@ export function AboutSection (props) {
             A full stack web developer that strives to balance technical
             excellence with flawless user experience in order to create products
             people love and use. I believe in writing clean modular code and
-            embrace test driven and agile development with the aim to
-            collaborate with others effectively and build reliable, scalable,
-            and maintainable applications.
+            have embraced test driven and agile development to collaborate
+            effectively while building reliable, scalable, and maintainable
+            applications.
             <br />
             <br />
             When I am not working or learning something new you might find me
@@ -57,28 +62,28 @@ export function AboutSection (props) {
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  <FontAwesomeIcon icon={faGithub} className='icon' />
+                  <FontAwesomeIcon icon={faGithub} className='icon' color={iconColor}/>
                 </a>
                 <a
                   href='https://www.linkedin.com/in/larryagbana/'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  <FontAwesomeIcon icon={faLinkedin} className='icon' />
+                  <FontAwesomeIcon icon={faLinkedin} className='icon' color={iconColor}/>
                 </a>
                 <a
                   href='https://calendar.google.com/calendar?cid=bGFycnlhZ2JhbmFAZ21haWwuY29t'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  <FontAwesomeIcon icon={faCalendarAlt} className='icon' />
+                  <FontAwesomeIcon icon={faCalendarAlt} className='icon' color={iconColor}/>
                 </a>
                 <a
                   href='mailto:larryagbana@gmail.com'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  <FontAwesomeIcon icon={faEnvelope} className='icon' />
+                  <FontAwesomeIcon icon={faEnvelope} className='icon' color={iconColor}/>
                 </a>
               </Space>
               {/* <> */}
@@ -94,8 +99,7 @@ export function AboutSection (props) {
                   mr='auto'
                   mt='1.5rem'
                   px='1.5rem'
-                  color={color}
-                  backgroundColor={headerColor}
+                  backgroundColor={buttonColor}
                   handleClick={() => {
                     window.open(
                       'https://zoom.us/j/4731778118?pwd=dVJYSGRaVjl1WHVPeUdjMW1OZE0zdz09',
