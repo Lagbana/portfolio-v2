@@ -11,7 +11,7 @@ import { Layout } from 'antd'
 import SideBar from '../src/components/SideBar'
 import {
   AboutSection,
-  BlogSection,
+  // BlogSection,
   ContactSection,
   EducationSection,
   ExperienceSection,

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { useSectionContext } from '../../utils/GlobalState'
 import { List, Card } from 'antd'
 import './style.css'
+import projectData from '../../data'
+
 
 export function ProjectsSection (props) {
   const { id } = props
@@ -40,19 +42,6 @@ export function ProjectsSection (props) {
     marginRight: 'auto',
     backgroundColor: headerColor
   }
-  const listData = []
-  for (let i = 0; i < 18; i++) {
-    listData.push({
-      href: 'http://ant.design',
-      title: `ant design part ${i}`,
-      avatar:
-        'https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png',
-      description:
-        'Ant Design, a design language for background applications, is refined by Ant UED Team.',
-      content:
-        'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.'
-    })
-  }
 
   return (
     <section id={id} style={projectStyle}>
@@ -64,15 +53,16 @@ export function ProjectsSection (props) {
             marginRight: 'auto'
           }}
         >
-          <h1
+          <h2
             style={{
+               fontFamily: "Poppins",
               color: headerColor,
               textAlign: 'center',
               fontSize: '3em'
             }}
           >
-            PROJECTS
-          </h1>
+            Projects
+          </h2>
           <hr style={titleUnderline} />
         </div>
 
@@ -94,23 +84,23 @@ export function ProjectsSection (props) {
             pageSizeOptions: ['3', '6', '9']
             // position: 'both'
           }}
-          dataSource={listData}
+          dataSource={projectData}
           renderItem={item => (
             <List.Item>
               <Card
                 // style={{ display: "none" }}
                 bordered={false}
+                hoverable={true}
                 key={item.title}
-                title={item.title}
+                // title={item.title}
+                style={{backgroundColor: "#f5f5f5", height: "20rem"}}
                 cover={
                   <img
                     alt={item.description}
-                    src={
-                      'https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png'
-                    }
+                    src={item.source}
+                    style={{width: "99%", marginLeft: "auto", marginRight: "auto"}}
                   />
                 }
-                // cover={<img alt={'ALT'} src={url} />}
               >
                 {item.content}
               </Card>

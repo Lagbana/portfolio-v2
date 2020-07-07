@@ -13,6 +13,7 @@ class PostRoute {
     this.router.patch('/blog/posts/:id', (req, res) => this.updatePost(req, res))
   }
 
+
   async getAllPosts (req, res) {
     try {
       const allPosts = await this.postService.getAllPostsService()
