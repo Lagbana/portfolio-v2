@@ -27,7 +27,12 @@ export function EducationSection (props) {
     return () => window.removeEventListener('resize', handleWindowResize)
   }, [])
 
-  const sectionPadding = width === tabletBreakpoint ? '2vw 2vw 2vw 5vw' : width < tabletBreakpoint ? '2vw 2vw 2vw 2vw' : '2vw 2vw 2vw 15vw'
+  const sectionPadding =
+    width === tabletBreakpoint
+      ? '2vw 2vw 2vw 5vw'
+      : width < tabletBreakpoint
+      ? '2vw 2vw 2vw 2vw'
+      : '2vw 2vw 2vw 15vw'
 
   // const sectionPadding =
   //   width > tabletBreakpoint ? '2vw 2vw 2vw 15vw' : '2vw 2vw 2vw 2vw'
@@ -109,16 +114,22 @@ export function EducationSection (props) {
       backgroundColor: headerColor
     }
   }
-// const sectionPadding = width === tabletBreakpoint ? '2vw 2vw 2vw 5vw' : width < tabletBreakpoint ? '2vw 2vw 2vw 2vw' : '2vw 2vw 2vw 15vw'
-  
-  const cardStyling = width > tabletBreakpoint ? styling.card : styling.mobileCard
-  const cardBodyStyling = width > tabletBreakpoint ? styling.cardBody : styling.mobileCardBody
-  const iconStyling = width > tabletBreakpoint ? styling.icons : styling.mobileIcons
-  const dateStyling = width > tabletBreakpoint ? styling.date : styling.mobileDate
-  const subtitleStyling = width > tabletBreakpoint ? styling.subtitle : styling.mobileSubtitle
-  const experienceStyling = width > tabletBreakpoint ? styling.experience : styling.mobileExperience
-  const contentStyling = width > tabletBreakpoint ? styling.content : styling.mobileContent
-  
+  // const sectionPadding = width === tabletBreakpoint ? '2vw 2vw 2vw 5vw' : width < tabletBreakpoint ? '2vw 2vw 2vw 2vw' : '2vw 2vw 2vw 15vw'
+
+  const cardStyling =
+    width > tabletBreakpoint ? styling.card : styling.mobileCard
+  const cardBodyStyling =
+    width > tabletBreakpoint ? styling.cardBody : styling.mobileCardBody
+  const iconStyling =
+    width > tabletBreakpoint ? styling.icons : styling.mobileIcons
+  const dateStyling =
+    width > tabletBreakpoint ? styling.date : styling.mobileDate
+  const subtitleStyling =
+    width > tabletBreakpoint ? styling.subtitle : styling.mobileSubtitle
+  const experienceStyling =
+    width > tabletBreakpoint ? styling.experience : styling.mobileExperience
+  const contentStyling =
+    width > tabletBreakpoint ? styling.content : styling.mobileContent
 
   return (
     <section

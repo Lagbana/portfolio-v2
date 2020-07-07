@@ -32,11 +32,7 @@ export function AboutSection (props) {
   }, [])
 
   const sectionPadding =
-    width === tabletBreakpoint
-      ? '2vw 2vw 2vw 10vw'
-      : width < tabletBreakpoint
-      ? '2vw 2vw 2vw 2vw'
-      : '2vw 2vw 2vw 15vw'
+    width === tabletBreakpoint? '2vw 2vw 2vw 10vw' : width < tabletBreakpoint ? '2vw 2vw 2vw 15vw' : '2vw 2vw 2vw 15vw'
 
   return (
     <section
