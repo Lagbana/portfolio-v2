@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSectionContext } from '../../utils/GlobalState'
 import './style.css'
 
@@ -20,13 +20,31 @@ export function AboutSection (props) {
   const headerColor = state[state.length - 1].headerColor
   const iconColor = state[state.length - 1].iconColor
 
+  const [width, setWidth] = useState(window.innerWidth)
+  const tabletBreakpoint = 768
+
+  useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth)
+    window.addEventListener('resize', handleWindowResize)
+
+    // Clean up: remove event listener
+    return () => window.removeEventListener('resize', handleWindowResize)
+  }, [])
+
+  const sectionPadding =
+    width === tabletBreakpoint
+      ? '2vw 2vw 2vw 10vw'
+      : width < tabletBreakpoint
+      ? '2vw 2vw 2vw 2vw'
+      : '2vw 2vw 2vw 15vw'
+
   return (
     <section
       id={id}
       style={{
         color: textColor,
         backgroundColor: bkColor,
-        padding: '2vw 2vw 2vw 15vw',
+        padding: sectionPadding,
         minHeight: '100vh'
       }}
     >
@@ -62,28 +80,44 @@ export function AboutSection (props) {
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  <FontAwesomeIcon icon={faGithub} className='icon' color={iconColor}/>
+                  <FontAwesomeIcon
+                    icon={faGithub}
+                    className='icon'
+                    color={iconColor}
+                  />
                 </a>
                 <a
                   href='https://www.linkedin.com/in/larryagbana/'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  <FontAwesomeIcon icon={faLinkedin} className='icon' color={iconColor}/>
+                  <FontAwesomeIcon
+                    icon={faLinkedin}
+                    className='icon'
+                    color={iconColor}
+                  />
                 </a>
                 <a
                   href='https://calendar.google.com/calendar?cid=bGFycnlhZ2JhbmFAZ21haWwuY29t'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  <FontAwesomeIcon icon={faCalendarAlt} className='icon' color={iconColor}/>
+                  <FontAwesomeIcon
+                    icon={faCalendarAlt}
+                    className='icon'
+                    color={iconColor}
+                  />
                 </a>
                 <a
                   href='mailto:larryagbana@gmail.com'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  <FontAwesomeIcon icon={faEnvelope} className='icon' color={iconColor}/>
+                  <FontAwesomeIcon
+                    icon={faEnvelope}
+                    className='icon'
+                    color={iconColor}
+                  />
                 </a>
               </Space>
               {/* <> */}

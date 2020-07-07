@@ -49,7 +49,7 @@ function SideBar () {
 
   return (
     <Sider
-      breakpoint='md'
+      breakpoint='lg'
       collapsedWidth='0'
       style={{
         height: '100vh',
@@ -97,7 +97,7 @@ function SideBar () {
               About
             </Link>
           </Menu.Item>
-          <Menu.Item key='2' >
+          {/* <Menu.Item key='2' >
             <Link
               activeClass='active'
               to='/experience'
@@ -110,7 +110,7 @@ function SideBar () {
             >
               Experience
             </Link>
-          </Menu.Item>
+          </Menu.Item> */}
           <Menu.Item key='3' >
             <Link
               activeClass='active'
@@ -153,7 +153,7 @@ function SideBar () {
               Blog
             </Link>
           </Menu.Item> */}
-          <Menu.Item key='6' >
+          {/* <Menu.Item key='6' >
             <Link
               activeClass='active'
               to='/contact'
@@ -166,7 +166,7 @@ function SideBar () {
             >
               Contact
             </Link>
-          </Menu.Item>
+          </Menu.Item> */}
         </Menu>
       </Router>
       <Router>

@@ -92,8 +92,8 @@ export function ProjectsSection (props) {
                 bordered={false}
                 hoverable={true}
                 key={item.title}
-                // title={item.title}
-                style={{backgroundColor: "#f5f5f5", height: "20rem"}}
+                title={item.title}
+                style={{backgroundColor: "#f5f5f5", height: "25rem"}}
                 cover={
                   <img
                     alt={item.description}

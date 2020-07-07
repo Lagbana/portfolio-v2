@@ -15,7 +15,8 @@ export function EducationSection (props) {
   const iconColor = state[state.length - 1].iconColor
 
   const [width, setWidth] = useState(window.innerWidth)
-  const breakpoint = 700
+  // const mobileBreakpoint = 700
+  // const tabletBreakpoint = 700
   const tabletBreakpoint = 768
 
   useEffect(() => {
@@ -26,10 +27,10 @@ export function EducationSection (props) {
     return () => window.removeEventListener('resize', handleWindowResize)
   }, [])
 
-  // const sectionPadding = width === tabletBreakpoint ? '2vw 2vw 2vw 25vw' : d.y >= 50 ? 'yellow' : 'red'
+  const sectionPadding = width === tabletBreakpoint ? '2vw 2vw 2vw 5vw' : width < tabletBreakpoint ? '2vw 2vw 2vw 2vw' : '2vw 2vw 2vw 15vw'
 
-  const sectionPadding =
-    width > breakpoint ? '2vw 2vw 2vw 15vw' : '2vw 2vw 2vw 2vw'
+  // const sectionPadding =
+  //   width > tabletBreakpoint ? '2vw 2vw 2vw 15vw' : '2vw 2vw 2vw 2vw'
 
   const styling = {
     section: {
@@ -77,7 +78,7 @@ export function EducationSection (props) {
       fontSize: '6vw'
     },
     icons: {
-      fontSize: '1.5vh'
+      fontSize: '3.5vh'
     },
     mobileDate: {
       fontSize: '2.5vh',
@@ -108,14 +109,15 @@ export function EducationSection (props) {
       backgroundColor: headerColor
     }
   }
-
-  const cardStyling = width > breakpoint ? styling.card : styling.mobileCard
-  const cardBodyStyling = width > breakpoint ? styling.cardBody : styling.mobileCardBody
-  const iconStyling = width > breakpoint ? styling.icons : styling.mobileIcons
-  const dateStyling = width > breakpoint ? styling.date : styling.mobileDate
-  const subtitleStyling = width > breakpoint ? styling.subtitle : styling.mobileSubtitle
-  const experienceStyling = width > breakpoint ? styling.experience : styling.mobileExperience
-  const contentStyling = width > breakpoint ? styling.content : styling.mobileContent
+// const sectionPadding = width === tabletBreakpoint ? '2vw 2vw 2vw 5vw' : width < tabletBreakpoint ? '2vw 2vw 2vw 2vw' : '2vw 2vw 2vw 15vw'
+  
+  const cardStyling = width > tabletBreakpoint ? styling.card : styling.mobileCard
+  const cardBodyStyling = width > tabletBreakpoint ? styling.cardBody : styling.mobileCardBody
+  const iconStyling = width > tabletBreakpoint ? styling.icons : styling.mobileIcons
+  const dateStyling = width > tabletBreakpoint ? styling.date : styling.mobileDate
+  const subtitleStyling = width > tabletBreakpoint ? styling.subtitle : styling.mobileSubtitle
+  const experienceStyling = width > tabletBreakpoint ? styling.experience : styling.mobileExperience
+  const contentStyling = width > tabletBreakpoint ? styling.content : styling.mobileContent
   
 
   return (

@@ -12,9 +12,9 @@ import SideBar from '../src/components/SideBar'
 import {
   AboutSection,
   // BlogSection,
-  ContactSection,
+  // ContactSection,
   EducationSection,
-  ExperienceSection,
+  // ExperienceSection,
   ProjectsSection
 } from '../src/sections/index'
 import { SectionProvider } from './utils/GlobalState'
@@ -32,11 +32,11 @@ function App () {
         </Router>
         <Content>
           <AboutSection id='/about' />
-          <ExperienceSection id='/experience' />
+          {/* <ExperienceSection id='/experience' /> */}
           <EducationSection id='/education' />
           <ProjectsSection id='/projects' />
           {/* <BlogSection id='/blog' /> */}
-          <ContactSection id='/contact' />
+          {/* <ContactSection id='/contact' /> */}
         </Content>
       </Layout>
     </SectionProvider>
