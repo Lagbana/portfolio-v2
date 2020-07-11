@@ -14,7 +14,7 @@ const path = require('path')
 const mongoose = require('mongoose')
 const initializeRoutes = require('./routes')
 const compression = require('compression')
-const emailHandler = require('./services/emailService')
+// const emailHandler = require('./services/emailService')
 
 // Initialize the express app
 const app = express()
@@ -50,16 +50,16 @@ app.use(bodyParser.json())
 
 initializeRoutes(app)
 
-const emailPayload = async () => {
-  try {
-    return await emailHandler()
-  } catch (error) {
-    console.error(error.response.body.errors)
-    throw error
-  }
-}
+// const emailPayload = async () => {
+//   try {
+//     return await emailHandler()
+//   } catch (error) {
+//     console.error(error.response.body.errors)
+//     throw error
+//   }
+// }
 
-emailPayload()
+// emailPayload()
 
 
 // Handling and rendering of static files

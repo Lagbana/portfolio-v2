@@ -56,26 +56,26 @@ export function ContactSection (props) {
     })
   }
 
-  const resetForm = () => {
-    setFormValues({
-      userName: '',
-      userEmail: '',
-      subject: '',
-      message: ''
-    })
-  }
+  // const resetForm = () => {
+  //   setFormValues({
+  //     userName: '',
+  //     userEmail: '',
+  //     subject: '',
+  //     message: ''
+  //   })
+  // }
 
   const handleSubmit = async (event) => {
     console.log('I got in')
     event.preventDefault()
     
-    const response = await axios({
-      method: 'POST',
-      url: 'http://localhost:3000/send',
-      data: formValues
-    })
+    // const response = await axios({
+    //   method: 'POST',
+    //   url: 'http://localhost:3001/send',
+    //   data: formValues
+    // })
 
-    response.data.status === 'success' ? resetForm() : console.log('Message failed to send')
+    // response.data.status === 'success' ? resetForm() : console.log('Message failed to send')
 
   }
 
