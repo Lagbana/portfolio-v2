@@ -12,7 +12,7 @@ import SideBar from '../src/components/SideBar'
 import {
   AboutSection,
   // BlogSection,
-  // ContactSection,
+  ContactSection,
   EducationSection,
   // ExperienceSection,
   ProjectsSection
@@ -36,7 +36,7 @@ function App () {
           <EducationSection id='/education' />
           <ProjectsSection id='/projects' />
           {/* <BlogSection id='/blog' /> */}
-          {/* <ContactSection id='/contact' /> */}
+          <ContactSection id='/contact' />
         </Content>
       </Layout>
     </SectionProvider>

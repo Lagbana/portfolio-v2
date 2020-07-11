@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useSectionContext } from '../../utils/GlobalState'
 import { List, Card } from 'antd'
 import './style.css'
-import projectData from '../../data'
+import projectData from '../../data/projects'
 
 
 export function ProjectsSection (props) {
@@ -38,8 +38,9 @@ export function ProjectsSection (props) {
     border: '0rem',
     height: '0.2rem',
     width: '5rem',
-    marginLeft: 'auto',
-    marginRight: 'auto',
+    marginLeft: '1.5rem',
+    // marginLeft: 'auto',
+    // marginRight: 'auto',
     backgroundColor: headerColor
   }
 
@@ -55,10 +56,11 @@ export function ProjectsSection (props) {
         >
           <h2
             style={{
-               fontFamily: "Poppins",
+              fontFamily: "Poppins",
               color: headerColor,
-              textAlign: 'center',
-              fontSize: '3em'
+              textAlign: 'left',
+              marginLeft: '1.5rem',
+              fontSize: '2.5em'
             }}
           >
             Projects
@@ -80,20 +82,20 @@ export function ProjectsSection (props) {
           }}
           pagination={{
             showSizeChanger: true,
-            pageSize: 6,
-            pageSizeOptions: ['3', '6', '9']
+            // pageSize: 6,
+            pageSizeOptions: ['3', '6']
             // position: 'both'
           }}
           dataSource={projectData}
           renderItem={item => (
             <List.Item>
               <Card
-                // style={{ display: "none" }}
                 bordered={false}
                 hoverable={true}
                 key={item.title}
                 title={item.title}
-                style={{backgroundColor: "#f5f5f5", height: "25rem"}}
+                style={{backgroundColor: "#ffffff", height: "25rem", borderRadius: '1rem'}}
+                // style={{backgroundColor: "#f5f5f5", height: "25rem"}}
                 cover={
                   <img
                     alt={item.description}

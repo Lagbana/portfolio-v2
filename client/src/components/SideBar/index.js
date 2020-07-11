@@ -153,7 +153,7 @@ function SideBar () {
               Blog
             </Link>
           </Menu.Item> */}
-          {/* <Menu.Item key='6' >
+          <Menu.Item key='6' >
             <Link
               activeClass='active'
               to='/contact'
@@ -166,7 +166,7 @@ function SideBar () {
             >
               Contact
             </Link>
-          </Menu.Item> */}
+          </Menu.Item>
         </Menu>
       </Router>
       <Router>

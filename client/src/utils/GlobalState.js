@@ -22,7 +22,6 @@ function reducer (state, action) {
           color: '#ffffff',
           menuColor: 'orange',
           backgroundColor: '#353452',
-          // backgroundColor: '#2f303a',
           headerColor: 'orange',
           buttonColor: '#FD4F64',
           iconColor: '#ffffff'
@@ -34,11 +33,9 @@ function reducer (state, action) {
         {
           color: '#000000',
           menuColor: '#000000',
-          backgroundColor: '#ffffff',
+          backgroundColor: '#F9F9FF',
           headerColor: '#121212',
-          // headerColor: 'blue',
           buttonColor: '#FD4F64',
-          // buttonColor: '#0080ff',
           iconColor: '#2593FC'
         }
       ]

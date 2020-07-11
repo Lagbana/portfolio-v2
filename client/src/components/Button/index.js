@@ -14,7 +14,8 @@ function ButtonComponent (props) {
     mr,
     mt,
     px,
-    handleClick
+    // handleClick
+    htmlType
   } = props
   const styling = {
     textAlign: 'center',
@@ -26,10 +27,17 @@ function ButtonComponent (props) {
     display: 'block',
     color: '#ffffff',
     backgroundColor: backgroundColor,
-    fontWeight: 600
+    fontWeight: 600,
+    border: 'none'
   }
   return (
-    <Button shape='round' size={size} style={styling} onClick={handleClick}>
+    <Button
+      shape='round'
+      size={size}
+      style={styling}
+      // onClick={handleClick}
+      htmlType={htmlType}
+    >
       {icon} &nbsp; <span>{name}</span>
     </Button>
   )

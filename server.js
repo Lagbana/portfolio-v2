@@ -12,23 +12,24 @@ const logger = require('morgan')
 const bodyParser = require('body-parser')
 const path = require('path')
 const mongoose = require('mongoose')
-// const initializeRoutes = require('./routes')
+const initializeRoutes = require('./routes')
 const compression = require('compression')
+const emailHandler = require('./services/emailService')
 
 // Initialize the express app
 const app = express()
 
 // Re-direct all unsecure traffic through the https protocol 
-function requireHTTPS (req, res, next) {
-  // The 'x-forwarded-proto' check is for Heroku
-  if (!req.secure && req.get('x-forwarded-proto') !== 'https' && process.env.NODE_ENV !== 'development') {
-    return res.redirect('https://' + req.get('host') + req.url)
-  }
-  next()
-}
+// function requireHTTPS (req, res, next) {
+//   // The 'x-forwarded-proto' check is for Heroku
+//   if (!req.secure && req.get('x-forwarded-proto') !== 'https' && process.env.NODE_ENV !== 'development') {
+//     return res.redirect('https://' + req.get('host') + req.url)
+//   }
+//   next()
+// }
 
 // Set up all middleware
-app.use(requireHTTPS)
+// app.use(requireHTTPS)
 // app.use(cors())
 app.use(logger('dev'))
 app.use(compression())
@@ -47,7 +48,19 @@ app.use(
 )
 app.use(bodyParser.json())
 
-// initializeRoutes(app)
+initializeRoutes(app)
+
+const emailPayload = async () => {
+  try {
+    return await emailHandler()
+  } catch (error) {
+    console.error(error.response.body.errors)
+    throw error
+  }
+}
+
+emailPayload()
+
 
 // Handling and rendering of static files
 if (process.env.NODE_ENV === 'production') {

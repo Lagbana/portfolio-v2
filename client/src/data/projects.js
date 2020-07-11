@@ -36,12 +36,12 @@ export default [
   {
     source: weather,
     description: 'Weather Dashboard',
-    title: `Weather dashboard website`,
+    title: `Weather Dashboard`,
     content: `Find today's and the 5-day weather forecast of a searched city. Data fetched from the openweather API.`
   },
   {
     source: workscheduler,
-    description: '',
+    description: 'Work day scheduler app',
     title: `Workday Scheduler`,
     content: `A 9am - 5pm Scheduler; input agenda and click save. Hours are color coded for past, current, and future time.`
   }
