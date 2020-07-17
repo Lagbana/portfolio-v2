@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d6b44c7a.chunk.css",
+    "main.js": "/static/js/main.34662517.chunk.js",
+    "main.js.map": "/static/js/main.34662517.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.09b85ec0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.09b85ec0.js.map",
+    "static/css/2.3cb76441.chunk.css": "/static/css/2.3cb76441.chunk.css",
+    "static/js/2.34599fca.chunk.js": "/static/js/2.34599fca.chunk.js",
+    "static/js/2.34599fca.chunk.js.map": "/static/js/2.34599fca.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.f4d95900df02ded23585e77fba7fb7af.js": "/precache-manifest.f4d95900df02ded23585e77fba7fb7af.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.3cb76441.chunk.css.map": "/static/css/2.3cb76441.chunk.css.map",
+    "static/css/main.d6b44c7a.chunk.css.map": "/static/css/main.d6b44c7a.chunk.css.map",
+    "static/js/2.34599fca.chunk.js.LICENSE.txt": "/static/js/2.34599fca.chunk.js.LICENSE.txt",
+    "static/media/LarryAgbana.pdf": "/static/media/LarryAgbana.89d6e40d.pdf",
+    "static/media/covid-19.PNG": "/static/media/covid-19.a79fbfae.PNG",
+    "static/media/good-samaritan.PNG": "/static/media/good-samaritan.eb2da3a7.PNG",
+    "static/media/hr-manager.PNG": "/static/media/hr-manager.f84b3170.PNG",
+    "static/media/larry.png": "/static/media/larry.524a3ee7.png",
+    "static/media/travelbook.PNG": "/static/media/travelbook.cb670a2c.PNG",
+    "static/media/weatherdashboard.PNG": "/static/media/weatherdashboard.fd4cc270.PNG",
+    "static/media/work-scheduler.png": "/static/media/work-scheduler.f9c3b6c2.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.09b85ec0.js",
+    "static/css/2.3cb76441.chunk.css",
+    "static/js/2.34599fca.chunk.js",
+    "static/css/main.d6b44c7a.chunk.css",
+    "static/js/main.34662517.chunk.js"
+  ]
+}
