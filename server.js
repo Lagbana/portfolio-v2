@@ -78,7 +78,7 @@ app.get('*', (req, res) => {
   Set's the PORT to 3000 when in local development OR to the PORT set by Heroku's environment when deployed
   The server accepts the PORT as a parameter to listen on.
 */
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 8080
 app.listen(PORT, () => {
   console.log(`Server running on PORT ${PORT}`)
 })
