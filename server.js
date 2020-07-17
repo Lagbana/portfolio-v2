@@ -65,7 +65,7 @@ initializeRoutes(app)
 
 // Handling and rendering of static files
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'))
+  app.use(express.static('./client/build'))
 }
 
 // Send every other request to the React app
