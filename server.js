@@ -30,6 +30,7 @@ function requireHTTPS (req, res, next) {
 
 // Set up all middleware
 app.use(requireHTTPS)
+
 app.use(cors())
 app.use(logger('dev'))
 app.use(compression())
