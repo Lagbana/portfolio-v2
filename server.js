@@ -8,7 +8,7 @@ Import Dependencies
 require('dotenv').config()
 const express = require('express')
 const logger = require('morgan')
-// const cors = require('cors')
+const cors = require('cors')
 const bodyParser = require('body-parser')
 const path = require('path')
 const mongoose = require('mongoose')
@@ -20,17 +20,17 @@ const compression = require('compression')
 const app = express()
 
 // Re-direct all unsecure traffic through the https protocol 
-// function requireHTTPS (req, res, next) {
-//   // The 'x-forwarded-proto' check is for Heroku
-//   if (!req.secure && req.get('x-forwarded-proto') !== 'https' && process.env.NODE_ENV !== 'development') {
-//     return res.redirect('https://' + req.get('host') + req.url)
-//   }
-//   next()
-// }
+function requireHTTPS (req, res, next) {
+  // The 'x-forwarded-proto' check is for Heroku
+  if (!req.secure && req.get('x-forwarded-proto') !== 'https' && process.env.NODE_ENV !== 'development') {
+    return res.redirect('https://' + req.get('host') + req.url)
+  }
+  next()
+}
 
 // Set up all middleware
-// app.use(requireHTTPS)
-// app.use(cors())
+app.use(requireHTTPS)
+app.use(cors())
 app.use(logger('dev'))
 app.use(compression())
 

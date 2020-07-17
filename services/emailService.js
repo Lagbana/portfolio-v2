@@ -7,8 +7,8 @@ async function emailHandler () {
   sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
   const msg = {
-    to: 'riddledway@yahoo.com',
-    from: 'larryagbana@gmail.com',
+    to: process.env.EMAIL_TO,
+    from: process.env.EMAIL_FROM,
     subject: 'Sending with Twilio SendGrid is Fun',
     text: 'and easy to do anywhere, even with Node.js',
     html: '<strong>and easy to do anywhere, even with Node.js</strong>'
