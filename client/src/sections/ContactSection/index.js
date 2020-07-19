@@ -33,11 +33,10 @@ export function ContactSection (props) {
 
   const [form] = Form.useForm()
 
+  
   const onFinish = values => {
-    console.log('I got in here')
     axios.post('/email', values).then(res => {
       form.resetFields()
-      // console.log(res)
     })
   }
 
