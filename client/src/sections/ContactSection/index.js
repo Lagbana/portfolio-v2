@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useSectionContext } from '../../utils/GlobalState'
 import axios from 'axios'
-import Button from '../../components/Button'
 import 'antd/dist/antd.css'
 import ContactList from '../../data/contact'
-import { Form, Input, Space } from 'antd'
+import { Form, Input, Space, Button } from 'antd'
 const { TextArea } = Input
 
 export function ContactSection (props) {
@@ -18,7 +17,6 @@ export function ContactSection (props) {
   const tabletBreakpoint = 768
 
   useEffect(() => {
-    // forceUpdate({})
     const handleWindowResize = () => setWidth(window.innerWidth)
     window.addEventListener('resize', handleWindowResize)
 
@@ -34,49 +32,17 @@ export function ContactSection (props) {
       : '2vw 2vw 2vw 15vw'
 
   const [form] = Form.useForm()
-  //const [, forceUpdate] = useState() // To disable submit button at the beginning.
 
-  const [formValues, setFormValues] = useState({
-    userName: '',
-    userEmail: '',
-    subject: '',
-    message: ''
-  })
-
-  const { userName, userEmail, subject, message } = formValues
-
-  const handleInputChange = event => {
-    // Getting the value and name of the input which triggered the change
-    const { name, value } = event.target
-
-    // Updating the input's state
-    setFormValues({
-      ...formValues,
-      [name]: value
+  const onFinish = values => {
+    console.log('I got in here')
+    axios.post('/email', values).then(res => {
+      form.resetFields()
+      console.log(res)
     })
   }
 
-  // const resetForm = () => {
-  //   setFormValues({
-  //     userName: '',
-  //     userEmail: '',
-  //     subject: '',
-  //     message: ''
-  //   })
-  // }
-
-  const handleSubmit = async (event) => {
-    console.log('I got in')
-    event.preventDefault()
-    
-    // const response = await axios({
-    //   method: 'POST',
-    //   url: 'http://localhost:3001/send',
-    //   data: formValues
-    // })
-
-    // response.data.status === 'success' ? resetForm() : console.log('Message failed to send')
-
+  const onFinishFailed = errorInfo => {
+    console.log('Failed:', errorInfo)
   }
 
   const layout = {
@@ -154,6 +120,14 @@ export function ContactSection (props) {
       padding: 0,
       position: 'absolute',
       width: '1px'
+    },
+    button: {
+      paddingLeft: '2rem',
+      paddingRight: '2rem',
+      backgroundColor: buttonColor,
+      color: '#ffffff',
+      fontWeight: 600,
+      border: 'none'
     }
   }
 
@@ -212,68 +186,56 @@ export function ContactSection (props) {
           <Space style={spacing}>
             <Form
               {...layout}
-              name='nest-messages'
+              name='contact form'
+              initialValues={{
+                userName: '',
+                email: '',
+                subject: '',
+                message: ''
+              }}
               form={form}
-              onSubmit={handleSubmit}
-              method='POST'
+              onFinish={onFinish}
+              onFinishFailed={onFinishFailed}
             >
-              <Form.Item>
-                <label style={styling.label}>Name</label>
+              <Form.Item
+                rules={[{ required: true, message: 'Please enter your name' }]}
+                name='userName'
+              >
                 <Input
                   placeholder='Your name'
                   size='large'
                   style={formInputs}
-                  value={userName}
-                  name='userName'
-                  onChange={handleInputChange}
                 />
               </Form.Item>
-              <Form.Item>
-                <label style={styling.label} htmlFor='email'>
-                  Email
-                </label>
+              <Form.Item
+                name='email'
+                rules={[
+                  {
+                    type: 'email',
+                    message: 'The input is not valid E-mail!'
+                  },
+                  { required: true, message: 'Please input your email!' }
+                ]}
+              >
                 <Input
                   placeholder='Email address'
                   size='large'
                   style={formInputs}
-                  value={userEmail}
-                  name='userEmail'
-                  onChange={handleInputChange}
                 />
               </Form.Item>
-              <Form.Item>
-                <label style={styling.label}>Subject</label>
-                <Input
-                  placeholder='Subject'
-                  size='large'
-                  style={formInputs}
-                  value={subject}
-                  name='subject'
-                  onChange={handleInputChange}
-                />
+              <Form.Item name='subject'>
+                <Input placeholder='Subject' size='large' style={formInputs} />
               </Form.Item>
-              <Form.Item>
-                <label style={styling.label}>Message</label>
+              <Form.Item name='message'>
                 <TextArea
-                  placeholder='Send me a message and I will respond with 24 hours'
+                  placeholder='Send me a message and I will respond within 24 hours'
                   size='large'
                   style={formTextarea}
-                  value={message}
-                  name='message'
-                  onChange={handleInputChange}
                 />
               </Form.Item>
               <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
-                <Button
-                  mr={styling.button}
-                  name='Send Message'
-                  px='2rem'
-                  size='large'
-                  backgroundColor={buttonColor}
-                  // handleClick= {handleSubmit}
-                  htmlType='submit'
-                >
-                  Submit
+                <Button style={styling.button} shape='round' size='large' htmlType='submit'>
+                Send Message
                 </Button>
               </Form.Item>
             </Form>

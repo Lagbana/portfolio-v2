@@ -1,22 +1,15 @@
 import React from 'react'
 import 'antd/dist/antd.css'
 import { Button } from 'antd'
+// import { useSectionContext } from '../../utils/GlobalState'
 
 // Button component
 // Takes props used for styling and naming
 function ButtonComponent (props) {
-  const {
-    icon,
-    size,
-    name,
-    backgroundColor,
-    ml,
-    mr,
-    mt,
-    px,
-    // handleClick
-    htmlType
-  } = props
+  // let [state, dispatch] = useSectionContext()
+  // const buttonColor = state[state.length - 1].buttonColor
+
+  const { icon, size, name, ml, backgroundColor, mr, mt, px, htmlType, handleClick } = props
   const styling = {
     textAlign: 'center',
     marginTop: mt,
@@ -31,13 +24,7 @@ function ButtonComponent (props) {
     border: 'none'
   }
   return (
-    <Button
-      shape='round'
-      size={size}
-      style={styling}
-      // onClick={handleClick}
-      htmlType={htmlType}
-    >
+    <Button shape='round' size={size} htmlType={htmlType} style={styling} onClick={handleClick}>
       {icon} &nbsp; <span>{name}</span>
     </Button>
   )

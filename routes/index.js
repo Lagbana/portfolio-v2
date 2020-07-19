@@ -1,18 +1,18 @@
 const Router = require('express').Router()
 
 // Routes
-const PostRoute = require('./postRoute')
+const EmailRoute = require('./emailRoute')
 
 // Services
-const { PostService } = require('../services')
+const { EmailService } = require('../services')
 
 // Initialize all routes
 const initializeRoutes = app => {
-  const routesArray = [new PostRoute({ PostService, Router })]
+  const routesArray = [new EmailRoute({ EmailService, Router })]
 
   routesArray.forEach(route => {
     route.initialize()
-    app.use(process.env.PREFIX, route.router)
+    app.use(route.router)
   })
 }
 

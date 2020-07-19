@@ -14,7 +14,6 @@ const path = require('path')
 const mongoose = require('mongoose')
 const initializeRoutes = require('./routes')
 const compression = require('compression')
-// const emailHandler = require('./services/emailService')
 
 // Initialize the express app
 const app = express()
@@ -53,21 +52,8 @@ app.use(bodyParser.json())
 
 initializeRoutes(app)
 
-// const emailPayload = async () => {
-//   try {
-//     return await emailHandler()
-//   } catch (error) {
-//     console.error(error.response.body.errors)
-//     throw error
-//   }
-// }
-
-// emailPayload()
-
 
 // Handling and rendering of static files
-
-
 app.use(express.static(path.join(__dirname + '/client/build')))
 
 // Send every other request to the React app

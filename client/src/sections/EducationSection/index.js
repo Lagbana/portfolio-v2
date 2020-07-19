@@ -32,7 +32,6 @@ export function EducationSection (props) {
       ? '2vw 2vw 2vw 2vw'
       : '2vw 2vw 2vw 15vw'
 
-
   const styling = {
     section: {
       backgroundColor: bkColor,
@@ -139,10 +138,6 @@ export function EducationSection (props) {
       backgroundColor: headerColor
     }
   }
-  // const cardBodyStyling = width === tabletBreakpoint ? styling.tabletCardBody : width < tabletBreakpoint ? styling.mobileCardBody : styling.cardBody
-
-  // const cardStyling =
-  //   width > tabletBreakpoint ? styling.card : styling.mobileCard
 
   const cardStyling =
     width === tabletBreakpoint
@@ -219,9 +214,11 @@ export function EducationSection (props) {
                     Full Stack Web Development Bootcamp - Carleton University
                   </h3>
                   <p style={contentStyling}>
-                    Closely studied an array of mathematical topics spanning
-                    linear algebra, analysis, calculus, and machine learning
-                    primarily using python and R.
+                    An intensive program focused on gaining technical
+                    programming skills in HTML5, CSS3, JavaScript, React,
+                    jQuery, Heroku, Node.js, Express, MySQL, MongoDB,
+                    Handelbars.js, ejs, REST, Agile, and other web development
+                    concepts.
                   </p>
                 </div>
               </Timeline.Item>
@@ -237,9 +234,10 @@ export function EducationSection (props) {
                     MBA (Data Science Specialization) - Carleton University
                   </h3>
                   <p style={contentStyling}>
-                    Closely studied an array of mathematical topics spanning
-                    linear algebra, analysis, calculus, and machine learning
-                    primarily using python and R.
+                    Business degree with a specialization in applied data
+                    science as it relates to the creation of business value.
+                    Learned to conduct visual analysis with Tableau, and
+                    PowerBI, and machine learning with Python, R, and SAS.
                   </p>
                 </div>
               </Timeline.Item>
@@ -256,9 +254,9 @@ export function EducationSection (props) {
                     B.A. Economics (Mathematics Minor) - Carleton University
                   </h3>
                   <p style={contentStyling}>
-                    Closely studied an array of mathematical topics spanning
-                    linear algebra, analysis, calculus, and machine learning
-                    primarily using python and R.
+                    Closely studied an array of economics and mathematical
+                    topics spanning macro economics, micro economics, labor
+                    economics, linear algebra, calculus, and discrete structures.
                   </p>
                 </div>
               </Timeline.Item>
