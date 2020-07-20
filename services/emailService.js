@@ -10,7 +10,7 @@ async function EmailService (context) {
     to: process.env.EMAIL_TO,
     from: process.env.EMAIL_FROM,
     subject: `${context.subject} from ${context.name + ', ' + context.email}`,
-    templteId: 'd-1f22d59e30884ddbb54a6bb58e82c7f5',
+    templateId: 'd-1f22d59e30884ddbb54a6bb58e82c7f5',
     dynamic_template_data: {
       message: context.message
     }
