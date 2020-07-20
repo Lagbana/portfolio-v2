@@ -10,15 +10,10 @@ async function EmailService (context) {
     to: process.env.EMAIL_TO,
     from: process.env.EMAIL_FROM,
     subject: context.subject,
-    // text: 'and easy to do anywhere, even with Node.js',
-    html: `
-    <br>
-    <strong>Sender: ${context.userName}</strong>
-    <strong>Sender Email: ${context.email}</strong>
-    <br>
-    <br>
-    ${context.message}
-    `
+    templteId: 'd-1f22d59e30884ddbb54a6bb58e82c7f5',
+    dynamic_template_data: {
+      message: context.message
+    }
   }
 
     const payload = await sgMail.send(msg)
