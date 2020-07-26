@@ -25,7 +25,23 @@ export default [
     source: goodsamaritan,
     description: 'good samaritan website',
     title: `good samaritan`,
-    content: <p><strong>Hackathon entry</strong> for {<a href="https://ru-hacks.devpost.com/?ref_content=default&ref_feature=challenge&ref_medium=discover" target='_blank' rel="noopener noreferrer">ruHacks</a>} in the opioid misuse harm reduction category. The app works by alerting nearby trained emergency response volunteers to act before paramedics arrive to an overdose situation.</p>
+    content: (
+      <p>
+        <strong>Hackathon entry</strong> for{' '}
+        {
+          <a
+            href='https://ru-hacks.devpost.com/?ref_content=default&ref_feature=challenge&ref_medium=discover'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            ruHacks
+          </a>
+        }{' '}
+        in the opioid misuse harm reduction category. The app works by alerting
+        nearby trained emergency response volunteers to act before paramedics
+        arrive to an overdose situation.
+      </p>
+    )
   },
   {
     source: hrmanager,

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useSectionContext } from '../../utils/GlobalState'
-import { List, Card } from 'antd'
+import { List, Card, Button, Row, Col } from 'antd'
+import DetailsDrawer from '../../components/Drawer'
 import './style.css'
 import projectData from '../../data/projects'
-
 
 export function ProjectsSection (props) {
   const { id } = props
@@ -12,8 +12,10 @@ export function ProjectsSection (props) {
   const bkColor = state[state.length - 1].backgroundColor
   const textColor = state[state.length - 1].color
   const headerColor = state[state.length - 1].headerColor
+  const buttonColor = state[state.length - 1].buttonColor
 
   const [width, setWidth] = useState(window.innerWidth)
+  // const breakpoint = 1024
   const breakpoint = 700
 
   useEffect(() => {
@@ -24,8 +26,53 @@ export function ProjectsSection (props) {
     return () => window.removeEventListener('resize', handleWindowResize)
   }, [])
 
-  const sectionPadding =
-    width > breakpoint ? '2vw 2vw 2vw 15vw' : '2vw 2vw 2vw 2vw'
+  const [visible, setVisible] = useState(false)
+
+  const showDrawer = () => {
+    setVisible(true)
+  }
+
+  const onClose = () => {
+    setVisible(false)
+  }
+
+  // let sectionPadding =
+  //   width === 768 ? '2vw 2vw 2vw 7vw' : '2vw 2vw 2vw 2vw'
+  
+  // let sectionPadding =
+  //   width > breakpoint ? '2vw 2vw 2vw 15vw' : '2vw 2vw 2vw 2vw'
+
+  let sectionPadding
+  let cardSize
+  let cardHeight
+  let buttonSize
+  let buttonWidth
+  
+  if (width === 768) {
+    sectionPadding = '2vw 2vw 2vw 2vw'
+    cardSize='default'
+    cardHeight='30rem'
+    buttonSize='default'
+    buttonWidth=24
+  } else if (width === 1024) {
+    sectionPadding = '2vw 2vw 2vw 16vw'
+    cardSize='default'
+    cardHeight='30rem'
+    buttonSize='small'
+    buttonWidth=12
+  } else if (width <= breakpoint) {
+    sectionPadding = '2vw 2vw 2vw 2vw'
+    cardSize='small'
+    cardHeight='26.5rem'
+    buttonSize='default'
+    buttonWidth=12
+  } else {
+    sectionPadding = '2vw 2vw 2vw 15vw'
+    cardSize='small'
+    cardHeight='26.5rem'
+    buttonSize='default'
+    buttonWidth=12
+  }
 
   const projectStyle = {
     backgroundColor: bkColor,
@@ -39,9 +86,17 @@ export function ProjectsSection (props) {
     height: '0.2rem',
     width: '5rem',
     marginLeft: '1.5rem',
-    // marginLeft: 'auto',
-    // marginRight: 'auto',
     backgroundColor: headerColor
+  }
+
+  const styling = {
+    button: {
+      borderRadius: '10px',
+      backgroundColor: buttonColor,
+      color: '#ffffff',
+      marginTop: '1rem',
+      marginBottom: '0',
+    }
   }
 
   return (
@@ -56,7 +111,7 @@ export function ProjectsSection (props) {
         >
           <h2
             style={{
-              fontFamily: "Poppins",
+              fontFamily: 'Poppins',
               color: headerColor,
               textAlign: 'left',
               marginLeft: '1.5rem',
@@ -70,7 +125,9 @@ export function ProjectsSection (props) {
 
         <List
           // itemLayout='vertical'
-          size='small'
+          // size='default'
+          // size='default'
+          size={cardSize}
           grid={{
             gutter: 16,
             xs: 1,
@@ -82,9 +139,7 @@ export function ProjectsSection (props) {
           }}
           pagination={{
             showSizeChanger: true,
-            // pageSize: 6,
             pageSizeOptions: ['3', '6']
-            // position: 'both'
           }}
           dataSource={projectData}
           renderItem={item => (
@@ -94,18 +149,46 @@ export function ProjectsSection (props) {
                 hoverable={true}
                 key={item.title}
                 title={item.title}
-                style={{backgroundColor: "#ffffff", height: "25rem", borderRadius: '1rem'}}
-                // style={{backgroundColor: "#f5f5f5", height: "25rem"}}
+                style={{
+                  backgroundColor: '#ffffff',
+                  height: {cardHeight},
+                  borderRadius: '1rem'
+                }}
                 cover={
                   <img
                     alt={item.description}
                     src={item.source}
-                    style={{width: "99%", marginLeft: "auto", marginRight: "auto"}}
+                    style={{
+                      width: '99%',
+                      marginLeft: 'auto',
+                      marginRight: 'auto'
+                    }}
                   />
                 }
               >
-                {item.content}
+                <Row>
+                  <Col span={24}>{item.content}</Col>
+                </Row>
+                <Row>
+                  {/* <Col span={12}> */}
+                  <Col span={buttonWidth}>
+                    <Button onClick={showDrawer} style={styling.button} size={buttonSize}>
+                      View Details
+                    </Button>
+                  </Col>
+                  {/* <Col span={12}> */}
+                  <Col span={buttonWidth}>
+                    <Button onClick={showDrawer} style={styling.button} size = {buttonSize}>
+                      View Details
+                    </Button>
+                  </Col>
+                </Row>
               </Card>
+              <DetailsDrawer
+                onClose={onClose}
+                isVisible={visible}
+                projectName={item.title}
+              />
             </List.Item>
           )}
         />
