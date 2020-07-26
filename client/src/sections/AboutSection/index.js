@@ -21,7 +21,6 @@ export function AboutSection (props) {
   const iconColor = state[state.length - 1].iconColor
 
   const [width, setWidth] = useState(window.innerWidth)
-  const tabletBreakpoint = 768
 
   useEffect(() => {
     const handleWindowResize = () => setWidth(window.innerWidth)
@@ -31,17 +30,30 @@ export function AboutSection (props) {
     return () => window.removeEventListener('resize', handleWindowResize)
   }, [])
 
-  const sectionPadding =
-    width === tabletBreakpoint
-      ? '2vw 2vw 2vw 10vw'
-      : width < tabletBreakpoint
-      ? '2vw 2vw 2vw 15vw'
-      : '2vw 2vw 2vw 15vw'
+
+  let sectionPadding
+  let sectionHeight
+
+  if (width === 768) {
+    sectionPadding = '2vw 2vw 2vw 15vw'
+    sectionHeight = '90vh'
+  } else if (width === 1024) {
+    sectionPadding = '2vw 2vw 2vw 7vw'
+    sectionHeight = '72.5vh'
+  } else if (width < 768) {
+    sectionPadding = '2vw 2vw 2vw 15vw'
+    sectionHeight = '100vh'
+  } else {
+    sectionPadding = '2vw 2vw 2vw 10vw'
+    sectionHeight ='80vh'
+  }
+    
+
 
   const contentMargin =
-    width === tabletBreakpoint
+    width === 768
       ? '0rem'
-      : width < tabletBreakpoint
+      : width < 768
       ? '0rem'
       : '8rem'
 
@@ -52,7 +64,7 @@ export function AboutSection (props) {
         color: textColor,
         backgroundColor: bkColor,
         padding: sectionPadding,
-        minHeight: '100vh'
+        minHeight: sectionHeight
       }}
     >
       <Content>
