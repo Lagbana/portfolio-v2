@@ -7,13 +7,13 @@ import { faGraduationCap } from '@fortawesome/free-solid-svg-icons'
 
 export function EducationSection (props) {
   const { id } = props
+
+  // utilize useSectionContext to use the general state values for colors
   let [state, dispatch] = useSectionContext()
   const bkColor = state[state.length - 1].backgroundColor
-  // const textColor = state[state.length - 1].color
-  // const buttonColor = state[state.length - 1].buttonColor
   const headerColor = state[state.length - 1].headerColor
-  // const iconColor = state[state.length - 1].iconColor
 
+  // Check for the width of the current device
   const [width, setWidth] = useState(window.innerWidth)
   const tabletBreakpoint = 768
 
@@ -25,13 +25,23 @@ export function EducationSection (props) {
     return () => window.removeEventListener('resize', handleWindowResize)
   }, [])
 
-  const sectionPadding =
-    width === tabletBreakpoint
-      ? '2vw 2vw 2vw 5vw'
-      : width < tabletBreakpoint
-      ? '2vw 2vw 2vw 2vw'
-      : '2vw 2vw 2vw 15vw'
+  // Section padding based on the device width
+  let sectionPadding
+  let iconSize
 
+  if (width === 768) {
+    sectionPadding = '2vw 2vw 2vw 5vw'
+    iconSize = '4vw'
+  } else if (width === 1024) {
+    sectionPadding = '2vw 2vw 2vw 16vw'
+    iconSize = '2vw'
+  } else if (width < tabletBreakpoint) {
+    sectionPadding = '2vw 2vw 2vw 2vw'
+  } else {
+    sectionPadding = '2vw 2vw 2vw 15vw'
+  }
+
+  // Styling elements in the section
   const styling = {
     section: {
       backgroundColor: bkColor,
@@ -43,7 +53,7 @@ export function EducationSection (props) {
       marginRight: 'auto',
       marginTop: '2rem',
       marginBottom: '2rem',
-      borderRadius: '1.5rem'
+      borderRadius: '1rem'
     },
     mobileCard: {
       width: '95%',
@@ -51,12 +61,12 @@ export function EducationSection (props) {
       marginRight: 'auto',
       marginTop: '2rem',
       marginBottom: '2rem',
-      borderRadius: '1.5rem'
+      borderRadius: '1rem'
     },
     card: {
       width: '95%',
       marginTop: '3rem',
-      borderRadius: '1.5rem'
+      borderRadius: '1rem'
     },
     mobileCardBody: {
       marginLeft: '0.5rem',
@@ -95,7 +105,7 @@ export function EducationSection (props) {
       fontSize: '6vw'
     },
     tabletIcons: {
-      fontSize: '4vw'
+      fontSize: iconSize
     },
     icons: {
       fontSize: '3.5vh'
@@ -154,7 +164,7 @@ export function EducationSection (props) {
       : styling.cardBody
 
   const iconStyling =
-    width === tabletBreakpoint
+    width === tabletBreakpoint || width === 1024
       ? styling.tabletIcons
       : width < tabletBreakpoint
       ? styling.mobileIcons
@@ -256,7 +266,8 @@ export function EducationSection (props) {
                   <p style={contentStyling}>
                     Closely studied an array of economics and mathematical
                     topics spanning macro economics, micro economics, labor
-                    economics, linear algebra, calculus, and discrete structures.
+                    economics, linear algebra, calculus, and discrete
+                    structures.
                   </p>
                 </div>
               </Timeline.Item>

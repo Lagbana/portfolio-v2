@@ -36,12 +36,6 @@ export function ProjectsSection (props) {
     setVisible(false)
   }
 
-  // let sectionPadding =
-  //   width === 768 ? '2vw 2vw 2vw 7vw' : '2vw 2vw 2vw 2vw'
-  
-  // let sectionPadding =
-  //   width > breakpoint ? '2vw 2vw 2vw 15vw' : '2vw 2vw 2vw 2vw'
-
   let sectionPadding
   let cardSize
   let cardHeight
