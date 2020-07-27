@@ -1,6 +1,6 @@
 // Import dependencies
-import React, { useState, useEffect } from 'react'
-import { useSectionContext } from '../../utils/GlobalState'
+import React from 'react'
+import { useSectionContext, useWindowSize } from '../../utils/GlobalState'
 import { Card, Timeline } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGraduationCap } from '@fortawesome/free-solid-svg-icons'
@@ -14,16 +14,8 @@ export function EducationSection (props) {
   const headerColor = state[state.length - 1].headerColor
 
   // Check for the width of the current device
-  const [width, setWidth] = useState(window.innerWidth)
+   const [width, height] = useWindowSize()
   const tabletBreakpoint = 768
-
-  useEffect(() => {
-    const handleWindowResize = () => setWidth(window.innerWidth)
-    window.addEventListener('resize', handleWindowResize)
-
-    // Clean up: remove event listener
-    return () => window.removeEventListener('resize', handleWindowResize)
-  }, [])
 
   // Section padding based on the device width
   let sectionPadding

@@ -17,7 +17,7 @@ import {
   // ExperienceSection,
   ProjectsSection
 } from '../src/sections/index'
-import { SectionProvider } from './utils/GlobalState'
+import { SectionProvider, SizeProvider } from './utils/GlobalState'
 
 // Destructure Layout to access the Sider component
 const { Content } = Layout
@@ -25,21 +25,22 @@ const { Content } = Layout
 // App function that returns the page of all JSX components
 function App () {
   return (
-    <SectionProvider>
-      <Layout>
-        <Router>
-          <SideBar />
-        </Router>
-        <Content>
-          <AboutSection id='/about' />
-          {/* <ExperienceSection id='/experience' /> */}
-          <EducationSection id='/education' />
-          <ProjectsSection id='/projects' />
-          {/* <BlogSection id='/blog' /> */}
-          <ContactSection id='/contact' />
-        </Content>
-      </Layout>
-    </SectionProvider>
+      <SectionProvider>
+        <Layout>
+          <Router>
+            <SideBar />
+          </Router>
+          <Content>
+            <AboutSection id='/about' />
+            {/* <ExperienceSection id='/experience' /> */}
+            <EducationSection id='/education' />
+            <ProjectsSection id='/projects' />
+            {/* <BlogSection id='/blog' /> */}
+            <ContactSection id='/contact' />
+          </Content>
+        </Layout>
+      </SectionProvider>
+ 
   )
 }
 

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { useSectionContext } from '../../utils/GlobalState'
+import React from 'react'
+import { useSectionContext, useWindowSize } from '../../utils/GlobalState'
 import './style.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -20,15 +20,7 @@ export function AboutSection (props) {
   const headerColor = state[state.length - 1].headerColor
   const iconColor = state[state.length - 1].iconColor
 
-  const [width, setWidth] = useState(window.innerWidth)
-
-  useEffect(() => {
-    const handleWindowResize = () => setWidth(window.innerWidth)
-    window.addEventListener('resize', handleWindowResize)
-
-    // Clean up: remove event listener
-    return () => window.removeEventListener('resize', handleWindowResize)
-  }, [])
+  const [width, height] = useWindowSize()
 
 
   let sectionPadding

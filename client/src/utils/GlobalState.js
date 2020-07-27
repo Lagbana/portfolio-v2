@@ -1,5 +1,12 @@
-import React, { createContext, useReducer, useContext } from 'react'
+import React, {
+  createContext,
+  useReducer,
+  useContext,
+  useState,
+  useLayoutEffect
+} from 'react'
 
+// create section context with default values
 const SectionContext = createContext({
   color: '',
   menuColor: '',
@@ -9,9 +16,20 @@ const SectionContext = createContext({
   iconColor: ''
 })
 
-// const useViewportContext = createContext({
-//   width: ''
-// })
+// Device dimensions checker
+// Returns an array with index 0 === width and index 1 === height
+function useWindowSize () {
+  const [size, setSize] = useState([0, 0])
+  useLayoutEffect(() => {
+    function updateSize () {
+      setSize([window.innerWidth, window.innerHeight])
+    }
+    window.addEventListener('resize', updateSize)
+    updateSize()
+    return () => window.removeEventListener('resize', updateSize)
+  }, [])
+  return size
+}
 
 function reducer (state, action) {
   switch (action.type) {
@@ -44,7 +62,7 @@ function reducer (state, action) {
   }
 }
 
-// const SectionProvider = ({ value = {color,}, ...props }) => {
+
 const SectionProvider = ({ value = [], ...props }) => {
   const [state, dispatch] = useReducer(reducer, [
     {
@@ -56,10 +74,9 @@ const SectionProvider = ({ value = [], ...props }) => {
       iconColor: '#ffffff'
     }
   ])
-  // return <SectionContext.Provider value={[state, dispatch]}  />
   return <SectionContext.Provider value={[state, dispatch]} {...props} />
 }
 
 const useSectionContext = () => useContext(SectionContext)
 
-export { SectionProvider, useSectionContext }
+export { SectionProvider, useSectionContext, useWindowSize }

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { useSectionContext } from '../../utils/GlobalState'
+import React from 'react'
+import { useSectionContext, useWindowSize } from '../../utils/GlobalState'
 import axios from 'axios'
 import 'antd/dist/antd.css'
 import ContactList from '../../data/contact'
@@ -13,16 +13,9 @@ export function ContactSection (props) {
   const buttonColor = state[state.length - 1].buttonColor
   const headerColor = state[state.length - 1].headerColor
 
-  const [width, setWidth] = useState(window.innerWidth)
+ const [width, height] = useWindowSize()
   const tabletBreakpoint = 768
 
-  useEffect(() => {
-    const handleWindowResize = () => setWidth(window.innerWidth)
-    window.addEventListener('resize', handleWindowResize)
-
-    // Clean up: remove event listener
-    return () => window.removeEventListener('resize', handleWindowResize)
-  }, [])
 
   const sectionPadding =
     width === tabletBreakpoint

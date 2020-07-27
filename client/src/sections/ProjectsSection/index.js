@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { useSectionContext } from '../../utils/GlobalState'
+import React, { useState } from 'react'
+import { useSectionContext, useWindowSize } from '../../utils/GlobalState'
 import { List, Card, Button, Row, Col } from 'antd'
 import DetailsDrawer from '../../components/Drawer'
 import './style.css'
@@ -14,21 +14,17 @@ export function ProjectsSection (props) {
   const headerColor = state[state.length - 1].headerColor
   const buttonColor = state[state.length - 1].buttonColor
 
-  const [width, setWidth] = useState(window.innerWidth)
-  // const breakpoint = 1024
   const breakpoint = 700
+  const [width, height] = useWindowSize()
 
-  useEffect(() => {
-    const handleWindowResize = () => setWidth(window.innerWidth)
-    window.addEventListener('resize', handleWindowResize)
-
-    // Clean up: remove event listener
-    return () => window.removeEventListener('resize', handleWindowResize)
-  }, [])
 
   const [visible, setVisible] = useState(false)
 
-  const showDrawer = () => {
+  // Drawer state handling
+  const [title, setTitle] = useState('')
+
+  const showDrawer = (val) => {
+    setTitle(val)
     setVisible(true)
   }
 
@@ -41,31 +37,31 @@ export function ProjectsSection (props) {
   let cardHeight
   let buttonSize
   let buttonWidth
-  
+
   if (width === 768) {
     sectionPadding = '2vw 2vw 2vw 2vw'
-    cardSize='default'
-    cardHeight='30rem'
-    buttonSize='default'
-    buttonWidth=24
+    cardSize = 'default'
+    cardHeight = '30rem'
+    buttonSize = 'default'
+    buttonWidth = 24
   } else if (width === 1024) {
     sectionPadding = '2vw 2vw 2vw 16vw'
-    cardSize='default'
-    cardHeight='30rem'
-    buttonSize='small'
-    buttonWidth=12
+    cardSize = 'default'
+    cardHeight = '30rem'
+    buttonSize = 'small'
+    buttonWidth = 12
   } else if (width <= breakpoint) {
     sectionPadding = '2vw 2vw 2vw 2vw'
-    cardSize='small'
-    cardHeight='26.5rem'
-    buttonSize='default'
-    buttonWidth=12
+    cardSize = 'small'
+    cardHeight = '26.5rem'
+    buttonSize = 'default'
+    buttonWidth = 12
   } else {
     sectionPadding = '2vw 2vw 2vw 15vw'
-    cardSize='small'
-    cardHeight='26.5rem'
-    buttonSize='default'
-    buttonWidth=12
+    cardSize = 'small'
+    cardHeight = '26.5rem'
+    buttonSize = 'default'
+    buttonWidth = 12
   }
 
   const projectStyle = {
@@ -89,7 +85,7 @@ export function ProjectsSection (props) {
       backgroundColor: buttonColor,
       color: '#ffffff',
       marginTop: '1rem',
-      marginBottom: '0',
+      marginBottom: '0'
     }
   }
 
@@ -118,9 +114,6 @@ export function ProjectsSection (props) {
         </div>
 
         <List
-          // itemLayout='vertical'
-          // size='default'
-          // size='default'
           size={cardSize}
           grid={{
             gutter: 16,
@@ -145,7 +138,7 @@ export function ProjectsSection (props) {
                 title={item.title}
                 style={{
                   backgroundColor: '#ffffff',
-                  height: {cardHeight},
+                  height: { cardHeight },
                   borderRadius: '1rem'
                 }}
                 cover={
@@ -164,27 +157,34 @@ export function ProjectsSection (props) {
                   <Col span={24}>{item.content}</Col>
                 </Row>
                 <Row>
-                  {/* <Col span={12}> */}
                   <Col span={buttonWidth}>
-                    <Button onClick={showDrawer} style={styling.button} size={buttonSize}>
+                    <Button
+                      onClick={()=>showDrawer(item.title)}
+                      style={styling.button}
+                      size={buttonSize}
+                    >
                       View Details
                     </Button>
                   </Col>
-                  {/* <Col span={12}> */}
                   <Col span={buttonWidth}>
-                    <Button onClick={showDrawer} style={styling.button} size = {buttonSize}>
+                    <Button
+                      onClick={showDrawer}
+                      style={styling.button}
+                      size={buttonSize}
+                    >
                       View Details
                     </Button>
                   </Col>
                 </Row>
               </Card>
-              <DetailsDrawer
-                onClose={onClose}
-                isVisible={visible}
-                projectName={item.title}
-              />
             </List.Item>
           )}
+        />
+        <DetailsDrawer
+          onClose={onClose}
+          isVisible={visible}
+          projectName={title}
+          // projectDescription={title}
         />
       </div>
     </section>

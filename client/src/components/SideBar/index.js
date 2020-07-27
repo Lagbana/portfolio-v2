@@ -41,7 +41,6 @@ function SideBar () {
 
 
   const bkColor = state[state.length - 1].backgroundColor
-  // const textColor = state[state.length - 1 ].color
   const buttonColor = state[state.length - 1].buttonColor
   const menuColor = state[state.length - 1].menuColor
 
@@ -63,8 +62,6 @@ function SideBar () {
         textAlign: 'center',
         fontDisplay: 'swap',
         backgroundColor: bkColor, 
-        // color: textColor
-
       }}
     >
       <ImageCard
