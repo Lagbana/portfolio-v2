@@ -20,11 +20,17 @@ export function ProjectsSection (props) {
 
   const [visible, setVisible] = useState(false)
 
-  // Drawer state handling
+  // Drawer - state handling of drawer contents
   const [title, setTitle] = useState('')
+  const [content, setContent] = useState('')
+  const [image, setImage] = useState('')
+  const [video, setVideo] = useState('')
 
-  const showDrawer = (val) => {
-    setTitle(val)
+  const showDrawer = (item) => {
+    setTitle(item.title)
+    setContent(item.content)
+    setImage(item.demoImage) 
+    setVideo(item.demoVideo) 
     setVisible(true)
   }
 
@@ -158,17 +164,19 @@ export function ProjectsSection (props) {
                 </Row>
                 <Row>
                   <Col span={buttonWidth}>
+                    <a href={item.deployed} alt={item.description} target='_blank'>
                     <Button
-                      onClick={()=>showDrawer(item.title)}
+                      // onClick={showDrawer}
                       style={styling.button}
                       size={buttonSize}
-                    >
-                      View Details
+                      >
+                      View App
                     </Button>
+                    </a>
                   </Col>
                   <Col span={buttonWidth}>
                     <Button
-                      onClick={showDrawer}
+                      onClick={()=>showDrawer(item)}
                       style={styling.button}
                       size={buttonSize}
                     >
@@ -184,7 +192,9 @@ export function ProjectsSection (props) {
           onClose={onClose}
           isVisible={visible}
           projectName={title}
-          // projectDescription={title}
+          projectContent={content}
+          projectImage={image}
+          projectVideo={video}
         />
       </div>
     </section>

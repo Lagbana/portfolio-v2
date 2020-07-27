@@ -1,8 +1,7 @@
 import React from 'react'
-import { useSectionContext } from '../../utils/GlobalState'
-import { Drawer, Divider, Row, Col, DescriptionItem } from 'antd'
+import { useSectionContext, useWindowSize } from '../../utils/GlobalState'
+import { Drawer, Divider, Row, Col } from 'antd'
 import './styles.css'
-
 
 const styling = {
   header: {
@@ -26,8 +25,14 @@ function DetailsDrawer ({
   onClose,
   isVisible,
   projectName,
-  projectDescription
+  projectContent,
+  projectImage,
+  projectVideo
 }) {
+  /*
+  !Delete unnessary comments
+ */
+
   return (
     <Drawer
       width={640}
@@ -44,19 +49,32 @@ function DetailsDrawer ({
       </p>
       <p style={styling.subHeaders}>Description</p>
       <Row>
-        <Col span={24}>Full Name: 'Lily'</Col>
-      </Row>
-      <Row>
-        <Col span={24}>{projectDescription}</Col>
-      </Row>
-      <Divider />
-      <p style={styling.subHeaders}>Demo</p>
-      <Row>
+        <Col span={24}>{projectContent}</Col>
         <Col span={24}>
           title='Skills' content='C / C + +, data structures, software
           engineering, operating systems, computer networks, databases, compiler
           theory, computer architecture, Microcomputer Principle and Interface
           Technology, Computer English, Java, ASP, etc.'
+        </Col>
+      </Row>
+
+      <Divider />
+      <p style={styling.subHeaders}>Demo</p>
+      <Row>
+        <Col span={24}>
+          {/* <img
+            src={projectDemo}
+            alt={`demo for project titled: ${projectName}`}
+          /> */}
+          <a href={projectVideo}
+          >
+            <img
+              src={projectImage}
+              alt={`demo for project titled: ${projectName}`}
+              width='546px'
+              height='100%'
+            />
+          </a>
         </Col>
       </Row>
       <Divider />
