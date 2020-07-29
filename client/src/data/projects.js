@@ -11,7 +11,16 @@ import workscheduler from '../resources/work-scheduler.png'
 export default [
   {
     source: vogi,
-    techStack: ['React', 'Node.js', 'Express', 'MongoDB', 'Mongoose', 'Ant Design', 'GitHub API', 'SendGrid API'],
+    techStack: [
+      'React',
+      'Node.js',
+      'Express',
+      'MongoDB',
+      'Mongoose',
+      'Ant Design',
+      'GitHub API',
+      'SendGrid API'
+    ],
     description: 'vogi webiste',
     deployed: 'https://www.vogi.ca/',
     github: 'https://github.com/Lagbana/vogi',
@@ -19,7 +28,8 @@ export default [
       'https://content.screencast.com/users/Larry2846/folders/Default/media/33d02635-dc52-4cf4-bf09-64d22faefde2/LWR_Recording.png',
     demoVideo: 'https://www.screencast.com/t/aQ4JjiD8Bsy5',
     title: `vogi`,
-    content: 'A project management app that provides a user friendly dashboard where users can create projects, add project features, and track project completion progress by integrating GitHub API.'
+    content:
+      'A project management app that provides a user friendly dashboard where users can create projects, add project features, and track project completion progress by integrating GitHub API.'
   },
   {
     source: portfolio,
