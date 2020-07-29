@@ -1,33 +1,35 @@
 {
   "files": {
-    "main.css": "/static/css/main.0c9097db.chunk.css",
-    "main.js": "/static/js/main.9b0f4481.chunk.js",
-    "main.js.map": "/static/js/main.9b0f4481.chunk.js.map",
+    "main.css": "/static/css/main.0069e245.chunk.css",
+    "main.js": "/static/js/main.4208fe97.chunk.js",
+    "main.js.map": "/static/js/main.4208fe97.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.09b85ec0.js",
     "runtime-main.js.map": "/static/js/runtime-main.09b85ec0.js.map",
     "static/css/2.3cb76441.chunk.css": "/static/css/2.3cb76441.chunk.css",
-    "static/js/2.ae487794.chunk.js": "/static/js/2.ae487794.chunk.js",
-    "static/js/2.ae487794.chunk.js.map": "/static/js/2.ae487794.chunk.js.map",
+    "static/js/2.f21d15d5.chunk.js": "/static/js/2.f21d15d5.chunk.js",
+    "static/js/2.f21d15d5.chunk.js.map": "/static/js/2.f21d15d5.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.55d9ef2699a8b8b0e747671b8a4692af.js": "/precache-manifest.55d9ef2699a8b8b0e747671b8a4692af.js",
+    "precache-manifest.07718b1187c56839411a5ea4aca47934.js": "/precache-manifest.07718b1187c56839411a5ea4aca47934.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.3cb76441.chunk.css.map": "/static/css/2.3cb76441.chunk.css.map",
-    "static/css/main.0c9097db.chunk.css.map": "/static/css/main.0c9097db.chunk.css.map",
-    "static/js/2.ae487794.chunk.js.LICENSE.txt": "/static/js/2.ae487794.chunk.js.LICENSE.txt",
+    "static/css/main.0069e245.chunk.css.map": "/static/css/main.0069e245.chunk.css.map",
+    "static/js/2.f21d15d5.chunk.js.LICENSE.txt": "/static/js/2.f21d15d5.chunk.js.LICENSE.txt",
     "static/media/LarryAgbana.pdf": "/static/media/LarryAgbana.89d6e40d.pdf",
+    "static/media/avatar.png": "/static/media/avatar.0ffeb044.png",
     "static/media/covid-19.PNG": "/static/media/covid-19.a79fbfae.PNG",
     "static/media/good-samaritan.PNG": "/static/media/good-samaritan.eb2da3a7.PNG",
     "static/media/hr-manager.PNG": "/static/media/hr-manager.f84b3170.PNG",
-    "static/media/larry.png": "/static/media/larry.524a3ee7.png",
+    "static/media/portfolio.png": "/static/media/portfolio.c0769dfd.png",
     "static/media/travelbook.PNG": "/static/media/travelbook.cb670a2c.PNG",
+    "static/media/vogi.png": "/static/media/vogi.b9bc9e4b.png",
     "static/media/weatherdashboard.PNG": "/static/media/weatherdashboard.fd4cc270.PNG",
     "static/media/work-scheduler.png": "/static/media/work-scheduler.f9c3b6c2.png"
   },
   "entrypoints": [
     "static/js/runtime-main.09b85ec0.js",
     "static/css/2.3cb76441.chunk.css",
-    "static/js/2.ae487794.chunk.js",
-    "static/css/main.0c9097db.chunk.css",
-    "static/js/main.9b0f4481.chunk.js"
+    "static/js/2.f21d15d5.chunk.js",
+    "static/css/main.0069e245.chunk.css",
+    "static/js/main.4208fe97.chunk.js"
   ]
 }

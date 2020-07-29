@@ -30,14 +30,15 @@ export function ContactSection (props) {
     notification[type]({
       message: 'New Message',
       description:
-        "You have successfully sent a new message, I'll respond within 24 hours 😀"
+        "Thanks for connecting, I'll respond within 24 hours 😀",
+      duration: 6.5
     })
   }
 
   const onFinish = values => {
     axios.post('/email', values).then(res => {
-      openNotification('success')
       form.resetFields()
+      openNotification('success')
     })
   }
 
