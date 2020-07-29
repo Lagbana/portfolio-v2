@@ -37,7 +37,8 @@ export function EducationSection (props) {
   const styling = {
     section: {
       backgroundColor: bkColor,
-      padding: sectionPadding
+      padding: sectionPadding,
+      color: 'black'
     },
     tabletCard: {
       width: '95%',
@@ -58,7 +59,7 @@ export function EducationSection (props) {
     card: {
       width: '95%',
       marginTop: '3rem',
-      borderRadius: '1rem'
+      borderRadius: '1rem',
     },
     mobileCardBody: {
       marginLeft: '0.5rem',

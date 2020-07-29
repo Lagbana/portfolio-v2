@@ -17,7 +17,7 @@ import {
   // ExperienceSection,
   ProjectsSection
 } from '../src/sections/index'
-import { SectionProvider, SizeProvider } from './utils/GlobalState'
+import { SectionProvider } from './utils/GlobalState'
 
 // Destructure Layout to access the Sider component
 const { Content } = Layout

@@ -1,38 +1,25 @@
-# google-cloud-test
+# React & Node.js Portfolio
 
-IAM & Admin --> Service account --> create service account (use app name) --> set owner status --> done ---> click actions ---> create project (downloads JSON) ---> Download gpg --> Run "GpG encryption
+![GitHub issues](https://img.shields.io/github/issues-raw/Lagbana/portfolio-v2) ![Contributors](https://img.shields.io/github/contributors/Lagbana/portfolio-v2) ![Code-size](https://img.shields.io/github/languages/code-size/Lagbana/portfolio-v2) ![Last Commit](https://img.shields.io/github/last-commit/Lagbana/portfolio-v2) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Encrypt:
-echo "secretKey" | gpg --batch --no-tty --yes --passphrase-fd 0 --symmetric -o file.txt.gpg file.txt
-Decrypt:
-echo "secretKey" | gpg --batch --no-tty --yes --passphrase-fd 0 --decrypt -o file.txt file.txt.gpg
+## Description
 
-(to encrypt the serviceAccout.json)"
+Current portfolio website built with React. This website showcases some of my projects with description and links to the deployed app and GitHub repository. There are links provided to connect via LinkedIn, GitHub, email, Google Calendar, and Zoom. The user is able to send a message from the website that is delivered in my email and choose the color theme for the website.
 
-## Docker set up
+#### Lessons Learned
+- State management with React Hooks and Context API
+- Sending emails using SendGrid API
 
-# build environment
+### Deployed Site
 
-FROM node:9.6.1 as builder
-RUN mkdir /usr/src/app
-WORKDIR /usr/src/app
-ENV PATH /usr/src/app/node_modules/.bin:\$PATH
-COPY package.json /usr/src/app/package.json
-RUN npm install
-RUN npm install react-scripts@1.1.1 -g
-COPY . /usr/src/app
-RUN cd client \
- npm run build \
- cd ..
-CMD ["npm", "start"]
+> www.larryagbana.com
 
-## Run in terminal
 
-docker build -t google-cloud-test .
-// -t google-cloud-test (sets the docker image tag name)
+### Tech Stack
 
-docker run -d -p 8080:8080 google-cloud-test
-// -d Default config
-// -p 8080:8080 (port forwarding from docker to localhost)
+    React / Node.js / Express / Ant Design
 
-## Create heroku.yml
+## Usage
+
+Examples coming soon...
+
