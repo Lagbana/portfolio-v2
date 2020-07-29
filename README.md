@@ -21,6 +21,4 @@ Current portfolio website built with React. This website showcases some of my pr
 
 ## Demo
 
-<a href='#' target='_self'>
-<img src='https://lh3.googleusercontent.com/d/16oREkhk4Fs9ABiNePbfM0NZAnfS0PULF=s720?authuser=0' alt='portfolio demo'/>
-</a>
+![demo gif](https://lh3.googleusercontent.com/d/16oREkhk4Fs9ABiNePbfM0NZAnfS0PULF=s720?authuser=0)
