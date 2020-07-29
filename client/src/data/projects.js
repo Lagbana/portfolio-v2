@@ -28,7 +28,7 @@ export default [
     deployed: 'https://www.larryagbana.com/',
     github: 'https://github.com/Lagbana/portfolio-v2',
     demoImage:
-      'https://lh3.googleusercontent.com/d/13EEnhBZcCUc4kCqyLbhWRcMIVB9ejm57=s720?authuser=0',
+      'https://lh3.googleusercontent.com/d/16oREkhk4Fs9ABiNePbfM0NZAnfS0PULF=s720?authuser=0',
     demoVideo: '',
     title: `React Portfolio`,
     content:

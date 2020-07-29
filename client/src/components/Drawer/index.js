@@ -143,8 +143,8 @@ function DetailsDrawer ({
           </Col>
           {techStack.map((item, key) => {
             return (
-              <Space>
-                <Tag key={key} color='#f50'>
+              <Space key={key}>
+                <Tag color='#f50'>
                   {item}
                 </Tag>
               </Space>
