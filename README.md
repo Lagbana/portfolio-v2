@@ -21,4 +21,6 @@ Current portfolio website built with React. This website showcases some of my pr
 
 ## Demo
 
-![demo gif](https://lh3.googleusercontent.com/d/16oREkhk4Fs9ABiNePbfM0NZAnfS0PULF=s720?authuser=0)
+<a href='https://lh3.googleusercontent.com/d/16oREkhk4Fs9ABiNePbfM0NZAnfS0PULF=s720?authuser=0'>
+<img src='https://content.screencast.com/users/Larry2846/folders/Default/media/bd75b2fe-c067-4165-b43b-04179f3931f2/LWR_Recording.png' alt='demo gif' width='70%' height='70%'/>
+</a>
