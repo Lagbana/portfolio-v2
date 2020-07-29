@@ -74,7 +74,7 @@ export function AboutSection (props) {
             </address>
 
             <p>
-              A full stack web developer that strives to balance technical
+              A full stack software developer that strives to balance technical
               excellence with flawless user experience in order to create
               products people love and use. I believe in writing clean modular
               code and have embraced test driven and agile development to

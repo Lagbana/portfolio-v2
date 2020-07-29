@@ -3,7 +3,7 @@ import { useSectionContext, useWindowSize } from '../../utils/GlobalState'
 import axios from 'axios'
 import 'antd/dist/antd.css'
 import ContactList from '../../data/contact'
-import { Form, Input, Space, Button } from 'antd'
+import { Form, Input, Space, Button, notification } from 'antd'
 const { TextArea } = Input
 
 export function ContactSection (props) {
@@ -13,9 +13,8 @@ export function ContactSection (props) {
   const buttonColor = state[state.length - 1].buttonColor
   const headerColor = state[state.length - 1].headerColor
 
- const [width, height] = useWindowSize()
+  const [width] = useWindowSize()
   const tabletBreakpoint = 768
-
 
   const sectionPadding =
     width === tabletBreakpoint
@@ -26,9 +25,18 @@ export function ContactSection (props) {
 
   const [form] = Form.useForm()
 
-  
+  // Send a notification when a user has successfully sent an email
+  const openNotification = type => {
+    notification[type]({
+      message: 'New Message',
+      description:
+        "You have successfully sent a new message, I'll respond within 24 hours 😀"
+    })
+  }
+
   const onFinish = values => {
     axios.post('/email', values).then(res => {
+      openNotification('success')
       form.resetFields()
     })
   }
@@ -226,8 +234,13 @@ export function ContactSection (props) {
                 />
               </Form.Item>
               <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
-                <Button style={styling.button} shape='round' size='large' htmlType='submit'>
-                Send Message
+                <Button
+                  style={styling.button}
+                  shape='round'
+                  size='large'
+                  htmlType='submit'
+                >
+                  Send Message
                 </Button>
               </Form.Item>
             </Form>

@@ -14,7 +14,7 @@ import ButtonComponent from '../../components/Button'
 import ImageCard from '../../components/ImageCard'
 
 // Import image and resume docs
-import imageSrc from '../../resources/larry.png'
+import imageSrc from '../../resources/avatar.png'
 import resume from '../../resources/LarryAgbana.pdf'
 
 // Destructure Layout to access the Sider component
@@ -33,18 +33,16 @@ function SideBar () {
   const [selected, setSelected] = useState('1')
   const [isChecked, setIsChecked] = useState(true)
 
-
   async function handleToggle (event) {
     setIsChecked(event)
-    isChecked === false ? await dispatch({ type: 'dark' }) : await dispatch({ type: 'light' })
+    isChecked === false
+      ? await dispatch({ type: 'dark' })
+      : await dispatch({ type: 'light' })
   }
-
 
   const bkColor = state[state.length - 1].backgroundColor
   const buttonColor = state[state.length - 1].buttonColor
   const menuColor = state[state.length - 1].menuColor
-
- 
 
   return (
     <Sider
@@ -61,7 +59,7 @@ function SideBar () {
         left: 0,
         textAlign: 'center',
         fontDisplay: 'swap',
-        backgroundColor: bkColor, 
+        backgroundColor: bkColor
       }}
     >
       <ImageCard
@@ -69,7 +67,7 @@ function SideBar () {
         alt='Larry Agbana Profile Image'
         onClick={scrollToTop}
       />
-      <div style={{marginBottom: '1vw'}}>
+      <div style={{ marginBottom: '1vw' }}>
         <Switch
           checkedChildren='dark'
           unCheckedChildren='light'
@@ -77,9 +75,13 @@ function SideBar () {
           size='default'
           onClick={handleToggle}
         />
-      </div >
+      </div>
       <Router>
-        <Menu style={{backgroundColor: bkColor}} mode='inline' selectedKeys={[selected]}>
+        <Menu
+          style={{ backgroundColor: bkColor }}
+          mode='inline'
+          selectedKeys={[selected]}
+        >
           <Menu.Item key='1'>
             <Link
               activeClass='active'
@@ -89,7 +91,7 @@ function SideBar () {
               offset={-70}
               duration={500}
               onClick={() => setSelected('1')}
-              style={{color: menuColor, fontWeight: 600, fontSize: '1rem'}}
+              style={{ color: menuColor, fontWeight: 600, fontSize: '1rem' }}
             >
               About
             </Link>
@@ -108,7 +110,7 @@ function SideBar () {
               Experience
             </Link>
           </Menu.Item> */}
-          <Menu.Item key='3' >
+          <Menu.Item key='3'>
             <Link
               activeClass='active'
               to='/education'
@@ -117,12 +119,12 @@ function SideBar () {
               offset={-70}
               duration={500}
               onClick={() => setSelected('3')}
-              style={{color: menuColor, fontWeight: 600, fontSize: '1rem'}}
+              style={{ color: menuColor, fontWeight: 600, fontSize: '1rem' }}
             >
               Education
             </Link>
           </Menu.Item>
-          <Menu.Item key='4' >
+          <Menu.Item key='4'>
             <Link
               activeClass='active'
               to='/projects'
@@ -131,7 +133,7 @@ function SideBar () {
               offset={-70}
               duration={500}
               onClick={() => setSelected('4')}
-              style={{color: menuColor, fontWeight: 600, fontSize: '1rem'}}
+              style={{ color: menuColor, fontWeight: 600, fontSize: '1rem' }}
             >
               Projects & Skills
             </Link>
@@ -150,7 +152,7 @@ function SideBar () {
               Blog
             </Link>
           </Menu.Item> */}
-          <Menu.Item key='6' >
+          <Menu.Item key='6'>
             <Link
               activeClass='active'
               to='/contact'
@@ -159,7 +161,7 @@ function SideBar () {
               offset={-70}
               duration={500}
               onClick={() => setSelected('6')}
-              style={{color: menuColor, fontWeight: 600, fontSize: '1rem'}}
+              style={{ color: menuColor, fontWeight: 600, fontSize: '1rem' }}
             >
               Contact
             </Link>
