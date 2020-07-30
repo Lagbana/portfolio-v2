@@ -15,7 +15,7 @@ import ImageCard from '../../components/ImageCard'
 
 // Import image and resume docs
 import imageSrc from '../../resources/avatar.png'
-import resume from '../../resources/LarryAgbana.pdf'
+import resume from '../../resources/LarryAgbana-2020.pdf'
 
 // Destructure Layout to access the Sider component
 const { Sider } = Layout
