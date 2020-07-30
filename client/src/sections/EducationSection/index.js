@@ -220,7 +220,7 @@ export function EducationSection (props) {
                     An intensive program focused on gaining technical
                     programming skills in HTML5, CSS3, JavaScript, React,
                     jQuery, Heroku, Node.js, Express, MySQL, MongoDB,
-                    Handelbars.js, ejs, REST, Agile, and other web development
+                    Handlebars.js, ejs, REST, Agile, and other web development
                     concepts.
                   </p>
                 </div>
