@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "674ddfd54dc8e0641b3aff373f5f3afa",
+    "revision": "4972bccb053439bf03381a023915a2be",
     "url": "/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.3cb76441.chunk.css"
   },
   {
-    "revision": "d1b9b10fe31ad4cea48e",
+    "revision": "e70e091b5838267e8950",
     "url": "/static/css/main.0069e245.chunk.css"
   },
   {
@@ -20,16 +20,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.f21d15d5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d1b9b10fe31ad4cea48e",
-    "url": "/static/js/main.4208fe97.chunk.js"
+    "revision": "e70e091b5838267e8950",
+    "url": "/static/js/main.5353e339.chunk.js"
   },
   {
     "revision": "9b4e396c183e42c1fa5c",
     "url": "/static/js/runtime-main.09b85ec0.js"
   },
   {
-    "revision": "89d6e40d16e9cb8a40a4707507c8b13a",
-    "url": "/static/media/LarryAgbana.89d6e40d.pdf"
+    "revision": "4272eb8ac53125d15e9a7195c7f916a0",
+    "url": "/static/media/LarryAgbana-2020.4272eb8a.pdf"
   },
   {
     "revision": "0ffeb044bb1686978854ac9851ed47f8",
