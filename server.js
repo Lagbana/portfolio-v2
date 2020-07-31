@@ -11,7 +11,6 @@ const logger = require('morgan')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const path = require('path')
-const mongoose = require('mongoose')
 const initializeRoutes = require('./routes')
 const compression = require('compression')
 
@@ -35,13 +34,6 @@ if (process.env.NODE_ENV === 'production') {
   }
   app.use(requireHTTPS)
 }
-
-// Connect to Mongo DB
-mongoose.connect(process.env.MONGO_URI, {
-  useCreateIndex: true,
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
 
 app.use(
   bodyParser.urlencoded({
