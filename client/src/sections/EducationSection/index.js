@@ -46,7 +46,8 @@ export function EducationSection (props) {
       marginRight: 'auto',
       marginTop: '2rem',
       marginBottom: '2rem',
-      borderRadius: '1rem'
+      borderRadius: '1rem',
+      backgroundColor: '#F0FFFF'
     },
     mobileCard: {
       width: '95%',
@@ -54,12 +55,14 @@ export function EducationSection (props) {
       marginRight: 'auto',
       marginTop: '2rem',
       marginBottom: '2rem',
-      borderRadius: '1rem'
+      borderRadius: '1rem',
+      backgroundColor: '#F0FFFF'
     },
     card: {
       width: '95%',
       marginTop: '3rem',
       borderRadius: '1rem',
+      backgroundColor: '#F0FFFF'
     },
     mobileCardBody: {
       marginLeft: '0.5rem',
@@ -95,13 +98,16 @@ export function EducationSection (props) {
       fontWeight: 700
     },
     mobileIcons: {
-      fontSize: '6vw'
+      fontSize: '6vw',
+      backgroundColor: '#F0FFFF'
     },
     tabletIcons: {
-      fontSize: iconSize
+      fontSize: iconSize,
+      backgroundColor: '#F0FFFF'
     },
     icons: {
-      fontSize: '3.5vh'
+      fontSize: '3.5vh',
+      backgroundColor: '#F0FFFF'
     },
     tabletDate: {
       fontSize: '2vh',

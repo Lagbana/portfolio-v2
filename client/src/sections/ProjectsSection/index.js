@@ -202,7 +202,7 @@ export function ProjectsSection (props) {
                 key={item.title}
                 title={item.title}
                 style={{
-                  backgroundColor: '#ffffff',
+                  backgroundColor: '#F0FFFF',
                   height: { cardHeight },
                   borderRadius: '1rem'
                 }}
