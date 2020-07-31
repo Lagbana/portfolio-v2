@@ -46,7 +46,7 @@ export function EducationSection (props) {
       marginRight: 'auto',
       marginTop: '2rem',
       marginBottom: '2rem',
-      borderRadius: '1rem',
+      borderRadius: '10px',
       backgroundColor: '#F0FFFF'
     },
     mobileCard: {
@@ -55,13 +55,13 @@ export function EducationSection (props) {
       marginRight: 'auto',
       marginTop: '2rem',
       marginBottom: '2rem',
-      borderRadius: '1rem',
+      borderRadius: '10px',
       backgroundColor: '#F0FFFF'
     },
     card: {
       width: '95%',
       marginTop: '3rem',
-      borderRadius: '1rem',
+      borderRadius: '10px',
       backgroundColor: '#F0FFFF'
     },
     mobileCardBody: {
@@ -142,8 +142,6 @@ export function EducationSection (props) {
       height: '0.2rem',
       width: '5rem',
       marginLeft: '1.5rem',
-      // marginLeft: 'auto',
-      // marginRight: 'auto',
       backgroundColor: headerColor
     }
   }
@@ -273,6 +271,7 @@ export function EducationSection (props) {
             </Timeline>
           </div>
         </Card>
+     
       </div>
     </section>
   )

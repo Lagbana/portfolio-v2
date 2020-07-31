@@ -1,92 +1,16 @@
 // Import dependencies
-import React, { useState } from 'react'
+import React from 'react'
 import { useSectionContext, useWindowSize } from '../../utils/GlobalState'
 import { Card, Space, Row, Col, Tag, List } from 'antd'
+import skills from '../../data/skills'
 
 export function SkillsSection (props) {
   const { id } = props
 
-  const frontend = [
-    {
-      skill: 'JavaScript',
-      icon: 'devicon-javascript-plain colored'
-    },
-    {
-      skill: 'TypeScript',
-      icon: 'devicon-typescript-plain colored'
-    },
-    { skill: 'React', icon: 'devicon-react-original colored' },
-    { skill: 'Webpack', icon: 'devicon-webpack-plain colored' },
-    {
-      skill: 'jQuery',
-      icon: 'devicon-jquery-plain-wordmark colored'
-    },
-    {
-      skill: 'HTML5',
-      icon: 'devicon-html5-plain colored'
-    },
-    {
-      skill: 'CSS3',
-      icon: 'devicon-css3-plain colored'
-    },
-    {
-      skill: 'Bootstrap',
-      icon: 'devicon-bootstrap-plain colored'
-    },
-    { skill: 'Handlebars', icon: 'devicon-handlebars-plain colored' }
-  ]
-  const backend = [
-    {
-      skill: 'Node.js',
-      color: '',
-      icon: 'devicon-nodejs-plain colored'
-    },
-    { skill: 'Express', color: '#303030', icon: 'devicon-express-original' },
-    {
-      skill: 'MongoDB',
-      color: '',
-      icon: 'devicon-mongodb-plain colored'
-    },
-    {
-      skill: 'MySQL',
-      color: '',
-      icon: 'devicon-mysql-plain colored'
-    },
-    {
-      skill: 'Sequelize',
-      color: '',
-      icon: 'devicon-sequelize-plain colored'
-    },
-    {
-      skill: 'Python',
-      color: '',
-      icon: 'devicon-python-plain colored'
-    },
-    {
-      skill: 'TypeScript',
-      color: '',
-      icon: 'devicon-typescript-plain colored'
-    },
-    {
-      skill: 'Heroku',
-      color: '',
-      icon: 'devicon-heroku-original colored'
-    },
-    {
-      skill: 'Travis CI',
-      color: '',
-      icon: 'devicon-travis-plain colored'
-    }
-  ]
-  const concepts = [
-    'RESTful APIs',
-    'Continuous Integration and deployment',
-    'Data Structues and Algorithms',
-    'Test driven development',
-    'Mobile-first design',
-    'Progressive Web Applications (PWA)',
-    'MVC Framework'
-  ]
+  // Skills data
+  const frontend = skills.frontend
+  const backend = skills.backend
+  const concepts = skills.concepts
 
   // utilize useSectionContext to use the general state values for colors
   let [state, dispatch] = useSectionContext()

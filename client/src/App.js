@@ -14,7 +14,7 @@ import {
   SkillsSection,
   ContactSection,
   EducationSection,
-  // ExperienceSection,
+  ExperienceSection,
   ProjectsSection
 } from '../src/sections/index'
 import { SectionProvider } from './utils/GlobalState'
@@ -35,7 +35,7 @@ function App () {
           <ProjectsSection id='/projects' />
           <SkillsSection id='/skills' />
           <EducationSection id='/education' />
-          {/* <ExperienceSection id='/experience' /> */}
+          <ExperienceSection id='/experience' />
           <ContactSection id='/contact' />
         </Content>
       </Layout>

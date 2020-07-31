@@ -112,7 +112,7 @@ function SideBar () {
             </Link>
           </Menu.Item>
 
-          <Menu.Item key='3' >
+          <Menu.Item key='3'>
             <Link
               activeClass='active'
               to='/skills'
@@ -121,11 +121,11 @@ function SideBar () {
               offset={-70}
               duration={500}
               onClick={() => setSelected('3')}
-              style={{color: menuColor, fontWeight: 600, fontSize: '1rem'}}
+              style={{ color: menuColor, fontWeight: 600, fontSize: '1rem' }}
             >
               Skills
             </Link>
-          </Menu.Item> 
+          </Menu.Item>
 
           <Menu.Item key='4'>
             <Link
@@ -141,24 +141,20 @@ function SideBar () {
               Education
             </Link>
           </Menu.Item>
-
-          {
-  /* <Menu.Item key='5' >
-            <Link
-              activeClass='active'
-              to='/experience'
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              onClick={() => setSelected('5')}
-              style={{color: menuColor, fontWeight: 600, fontSize: '1rem'}}
-            >
-              Experience
-            </Link>
-          </Menu.Item> */
-}
-
+            <Menu.Item key='5'>
+              <Link
+                activeClass='active'
+                to='/experience'
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                onClick={() => setSelected('5')}
+                style={{ color: menuColor, fontWeight: 600, fontSize: '1rem' }}
+              >
+                Experience
+              </Link>
+            </Menu.Item>
           <Menu.Item key='6'>
             <Link
               activeClass='active'
