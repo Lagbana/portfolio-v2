@@ -96,35 +96,8 @@ function SideBar () {
               About
             </Link>
           </Menu.Item>
-          {/* <Menu.Item key='2' >
-            <Link
-              activeClass='active'
-              to='/experience'
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              onClick={() => setSelected('2')}
-              style={{color: menuColor, fontWeight: 600, fontSize: '1rem'}}
-            >
-              Experience
-            </Link>
-          </Menu.Item> */}
-          <Menu.Item key='3'>
-            <Link
-              activeClass='active'
-              to='/education'
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              onClick={() => setSelected('3')}
-              style={{ color: menuColor, fontWeight: 600, fontSize: '1rem' }}
-            >
-              Education
-            </Link>
-          </Menu.Item>
-          <Menu.Item key='4'>
+
+          <Menu.Item key='2'>
             <Link
               activeClass='active'
               to='/projects'
@@ -132,16 +105,48 @@ function SideBar () {
               smooth={true}
               offset={-70}
               duration={500}
+              onClick={() => setSelected('2')}
+              style={{ color: menuColor, fontWeight: 600, fontSize: '1rem' }}
+            >
+              Projects
+            </Link>
+          </Menu.Item>
+
+          <Menu.Item key='3' >
+            <Link
+              activeClass='active'
+              to='/skills'
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              onClick={() => setSelected('3')}
+              style={{color: menuColor, fontWeight: 600, fontSize: '1rem'}}
+            >
+              Skills
+            </Link>
+          </Menu.Item> 
+
+          <Menu.Item key='4'>
+            <Link
+              activeClass='active'
+              to='/education'
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
               onClick={() => setSelected('4')}
               style={{ color: menuColor, fontWeight: 600, fontSize: '1rem' }}
             >
-              Projects & Skills
+              Education
             </Link>
           </Menu.Item>
-          {/* <Menu.Item key='5' >
+
+          {
+  /* <Menu.Item key='5' >
             <Link
               activeClass='active'
-              to='/blog'
+              to='/experience'
               spy={true}
               smooth={true}
               offset={-70}
@@ -149,9 +154,11 @@ function SideBar () {
               onClick={() => setSelected('5')}
               style={{color: menuColor, fontWeight: 600, fontSize: '1rem'}}
             >
-              Blog
+              Experience
             </Link>
-          </Menu.Item> */}
+          </Menu.Item> */
+}
+
           <Menu.Item key='6'>
             <Link
               activeClass='active'

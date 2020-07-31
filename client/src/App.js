@@ -11,7 +11,7 @@ import { Layout } from 'antd'
 import SideBar from '../src/components/SideBar'
 import {
   AboutSection,
-  // BlogSection,
+  SkillsSection,
   ContactSection,
   EducationSection,
   // ExperienceSection,
@@ -25,22 +25,21 @@ const { Content } = Layout
 // App function that returns the page of all JSX components
 function App () {
   return (
-      <SectionProvider>
-        <Layout>
-          <Router>
-            <SideBar />
-          </Router>
-          <Content>
-            <AboutSection id='/about' />
-            {/* <ExperienceSection id='/experience' /> */}
-            <EducationSection id='/education' />
-            <ProjectsSection id='/projects' />
-            {/* <BlogSection id='/blog' /> */}
-            <ContactSection id='/contact' />
-          </Content>
-        </Layout>
-      </SectionProvider>
- 
+    <SectionProvider>
+      <Layout>
+        <Router>
+          <SideBar />
+        </Router>
+        <Content>
+          <AboutSection id='/about' />
+          <ProjectsSection id='/projects' />
+          <SkillsSection id='/skills' />
+          <EducationSection id='/education' />
+          {/* <ExperienceSection id='/experience' /> */}
+          <ContactSection id='/contact' />
+        </Content>
+      </Layout>
+    </SectionProvider>
   )
 }
 
