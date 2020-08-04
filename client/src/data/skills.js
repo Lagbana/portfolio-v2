@@ -59,7 +59,7 @@ export default {
       icon: 'devicon-heroku-original colored'
     },
     {
-      skill: 'Travis CI',
+      skill: 'Travis',
       icon: 'devicon-travis-plain colored'
     }
   ],

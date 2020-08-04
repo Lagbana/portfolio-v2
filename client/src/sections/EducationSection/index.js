@@ -218,7 +218,7 @@ export function EducationSection (props) {
                 <div style={experienceStyling}>
                   <h4 style={dateStyling}>July 2020</h4>
                   <h3 style={subtitleStyling}>
-                    Full Stack Web Development Bootcamp - Carleton University (A+ average)
+                    Full Stack Web Development Certificate - Carleton University (A+ average)
                   </h3>
                   <p style={contentStyling}>
                     An intensive program focused on gaining technical
