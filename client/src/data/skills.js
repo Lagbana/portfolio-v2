@@ -39,6 +39,10 @@ export default {
       icon: 'devicon-mongodb-plain colored'
     },
     {
+      skill: 'PostgreSQL',
+      icon: 'devicon-postgresql-plain colored'
+    },
+    {
       skill: 'MySQL',
       icon: 'devicon-mysql-plain colored'
     },
