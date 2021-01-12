@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.0069e245.chunk.css",
-    "main.js": "/static/js/main.c3a7e920.chunk.js",
-    "main.js.map": "/static/js/main.c3a7e920.chunk.js.map",
+    "main.css": "/static/css/main.7547febb.chunk.css",
+    "main.js": "/static/js/main.73559851.chunk.js",
+    "main.js.map": "/static/js/main.73559851.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.09b85ec0.js",
     "runtime-main.js.map": "/static/js/runtime-main.09b85ec0.js.map",
-    "static/css/2.3cb76441.chunk.css": "/static/css/2.3cb76441.chunk.css",
-    "static/js/2.b9b13d4b.chunk.js": "/static/js/2.b9b13d4b.chunk.js",
-    "static/js/2.b9b13d4b.chunk.js.map": "/static/js/2.b9b13d4b.chunk.js.map",
+    "static/css/2.630bd408.chunk.css": "/static/css/2.630bd408.chunk.css",
+    "static/js/2.0ecdb3e7.chunk.js": "/static/js/2.0ecdb3e7.chunk.js",
+    "static/js/2.0ecdb3e7.chunk.js.map": "/static/js/2.0ecdb3e7.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.9eedf4e707d7c5e0c009097fd03c957e.js": "/precache-manifest.9eedf4e707d7c5e0c009097fd03c957e.js",
+    "precache-manifest.c8944f5e91b43f39b98a8769044c6903.js": "/precache-manifest.c8944f5e91b43f39b98a8769044c6903.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/2.3cb76441.chunk.css.map": "/static/css/2.3cb76441.chunk.css.map",
-    "static/css/main.0069e245.chunk.css.map": "/static/css/main.0069e245.chunk.css.map",
-    "static/js/2.b9b13d4b.chunk.js.LICENSE.txt": "/static/js/2.b9b13d4b.chunk.js.LICENSE.txt",
-    "static/media/LarryAgbana-2020.pdf": "/static/media/LarryAgbana-2020.74cce2b1.pdf",
+    "static/css/2.630bd408.chunk.css.map": "/static/css/2.630bd408.chunk.css.map",
+    "static/css/main.7547febb.chunk.css.map": "/static/css/main.7547febb.chunk.css.map",
+    "static/js/2.0ecdb3e7.chunk.js.LICENSE.txt": "/static/js/2.0ecdb3e7.chunk.js.LICENSE.txt",
+    "static/media/LarryAgbana-Resume.pdf": "/static/media/LarryAgbana-Resume.aa7e43f1.pdf",
     "static/media/avatar.png": "/static/media/avatar.0ffeb044.png",
     "static/media/covid-19.PNG": "/static/media/covid-19.a79fbfae.PNG",
     "static/media/good-samaritan.PNG": "/static/media/good-samaritan.eb2da3a7.PNG",
@@ -27,9 +27,9 @@
   },
   "entrypoints": [
     "static/js/runtime-main.09b85ec0.js",
-    "static/css/2.3cb76441.chunk.css",
-    "static/js/2.b9b13d4b.chunk.js",
-    "static/css/main.0069e245.chunk.css",
-    "static/js/main.c3a7e920.chunk.js"
+    "static/css/2.630bd408.chunk.css",
+    "static/js/2.0ecdb3e7.chunk.js",
+    "static/css/main.7547febb.chunk.css",
+    "static/js/main.73559851.chunk.js"
   ]
 }
