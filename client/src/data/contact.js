@@ -7,7 +7,7 @@ import { faVideo } from '@fortawesome/free-solid-svg-icons'
 import { faFilePdf } from '@fortawesome/free-solid-svg-icons'
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
 import { List, Space } from 'antd'
-import resume from '../resources/LarryAgbana-2020.pdf'
+import resume from '../resources/LarryAgbana-Resume.pdf'
 
 function ContactLinks () {
   let [state, dispatch] = useSectionContext()

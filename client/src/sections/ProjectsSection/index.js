@@ -5,7 +5,7 @@ import DetailsDrawer from '../../components/Drawer'
 import './style.css'
 import projectData from '../../data/projects'
 
-export function ProjectsSection (props) {
+export function ProjectsSection(props) {
   const { id } = props
 
   const stack = [

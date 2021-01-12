@@ -8,35 +8,42 @@ export default {
       skill: 'TypeScript',
       icon: 'devicon-typescript-plain colored'
     },
-    { skill: 'React', icon: 'devicon-react-original colored' },
+    { skill: 'React', icon: 'devicon-react-original-wordmark colored' },
+    { skill: 'Redux', icon: 'devicon-redux-original colored' },
+    { skill: 'React native', icon: 'devicon-react-original colored' },
     { skill: 'Webpack', icon: 'devicon-webpack-plain colored' },
     {
       skill: 'jQuery',
       icon: 'devicon-jquery-plain-wordmark colored'
     },
     {
-      skill: 'HTML5',
-      icon: 'devicon-html5-plain colored'
-    },
-    {
       skill: 'CSS3',
       icon: 'devicon-css3-plain colored'
     },
     {
-      skill: 'Bootstrap',
-      icon: 'devicon-bootstrap-plain colored'
+      skill: 'HTML5',
+      icon: 'devicon-html5-plain colored'
     },
     { skill: 'Handlebars', icon: 'devicon-handlebars-plain colored' }
   ],
   backend: [
     {
-      skill: 'Node.js',
+      skill: 'Node',
       icon: 'devicon-nodejs-plain colored'
     },
-    { skill: 'Express', color: '#303030', icon: 'devicon-express-original' },
     {
-      skill: 'MongoDB',
-      icon: 'devicon-mongodb-plain colored'
+      skill: 'TypeScript',
+      icon: 'devicon-typescript-plain colored'
+    },
+    { skill: 'GoLang', color: '#67D2DF', icon: 'devicon-go-plain colored' },
+
+    {
+      skill: 'Python',
+      icon: 'devicon-python-plain colored'
+    },
+    {
+      skill: 'NestJS',
+      icon: 'devicon-nestjs-plain colored'
     },
     {
       skill: 'PostgreSQL',
@@ -47,16 +54,12 @@ export default {
       icon: 'devicon-mysql-plain colored'
     },
     {
-      skill: 'Sequelize',
-      icon: 'devicon-sequelize-plain colored'
+      skill: 'MongoDB',
+      icon: 'devicon-mongodb-plain colored'
     },
     {
-      skill: 'Python',
-      icon: 'devicon-python-plain colored'
-    },
-    {
-      skill: 'TypeScript',
-      icon: 'devicon-typescript-plain colored'
+      skill: 'Docker',
+      icon: 'devicon-docker-plain colored'
     },
     {
       skill: 'Heroku',
@@ -69,13 +72,15 @@ export default {
   ],
   concepts: [
     'Object Oriented Programming (OOP)',
-    'RESTful APIs',
+    'SOLID principles',
     'Continuous Integration and Deployment',
-    'Data Structues and Algorithms',
+    'RESTful APIs',
+    'GraphQL',
     'Test driven development',
     'Mobile-first design',
     'Progressive Web Applications (PWA)',
     'MVC Framework',
-    'Git Version Control'
+    'Git Version Control',
+
   ]
 }
